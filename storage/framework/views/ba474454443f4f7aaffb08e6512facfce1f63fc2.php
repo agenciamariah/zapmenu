@@ -1,0 +1,1 @@
+<span><?php echo e($time); ?></span><?php /**PATH /var/www/test.com/html/laravel/resources/views/orders/partials/time.blade.php ENDPATH**/ ?>
