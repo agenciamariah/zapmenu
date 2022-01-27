@@ -110,6 +110,14 @@
                                             <span class="btn-inner--icon"><i class="fa fa-edit"></i></span>
                                         </button>
 
+                                        <button class="btn btn-icon btn-1 btn-sm btn-duplicar" type="button" id="edit" data-toggle="modal" data-target="#modal-duplicar-category" data-toggle="tooltip" data-placement="top" title="Duplicar {{ __('Category') }}" data-id="<?= $category->id ?>" data-name="<?= $category->name ?>" >
+                                            <span class="btn-inner--icon"><i class="fa fa-paste"></i></span>
+                                        </button>
+
+                                        <button class="btn btn-icon btn-1 btn-sm btn-visivel" type="button" id="edit" data-toggle="modal" data-target="#modal-visivel-category" data-toggle="tooltip" data-placement="top" title="Tornar invisível" data-id="<?= $category->id ?>" data-name="<?= $category->name ?>" >
+                                            <span class="btn-inner--icon"><i class="fa fa-eye-open"></i></span>
+                                        </button>
+
                                        
 
                                         <form action="{{ route('categories.destroy', $category) }}" method="post">

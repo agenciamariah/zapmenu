@@ -112,7 +112,7 @@
                                         @include('partials.input',['id'=>'vat','name'=>__('VAT percentage( calculated into item price )'),'placeholder'=>__('Item VAT percentage'),'value'=>$item->vat,'required'=>false,'type'=>'number'])
                                         <?php $image=['name'=>'item_image','label'=>__('Item Image'),'value'=> $item->logom,'style'=>'width: 290px; height:200']; ?>
                                         @include('partials.images',$image)
-                                        @include('partials.toggle',['id'=>'itemAvailable','name'=>'Item available','checked'=>($item->available == 1)])
+                                        @include('partials.toggle',['id'=>'itemAvailable','name'=>'Item visível','checked'=>($item->available == 1)])
 
                                         <div class="form-group">
                                         
