@@ -216,16 +216,16 @@
             </div>
             <div class="modal-body p-0">
                 <div class="card bg-secondary shadow border-0">
-                    <div class="card-body px-lg-5 py-lg-5">
+                   <div class="card-body px-lg-5 py-lg-5" style="text-align: left;padding-left: 0px !important;padding-top: 10px !important;">
                         <div class="col-md-10 offset-md-1">
-                        <form role="form" method="post" action="{{ route('import.items') }}" enctype="multipart/form-data">
-                            <div class="form-group text-center{{ $errors->has('item_image') ? ' has-danger' : '' }}">
+                        <form role="form" method="post" action="https://app.zapentrega.com/import/items" enctype="multipart/form-data">
+                            <div class="form-group" style="text-align: left;">
 
-                                <label class="form-control-label" for="items_excel">Salve para fazer uma <b>cópia</b> do seu produto.</label>
+                                <label class="form-control-label" for="items_excel">Salve para fazer uma <b style="color: black;">cópia</b> do seu produto.</label>
 
                             </div>
-                            <input name="res_id" id="res_id" type="hidden" value="{{ $restorant_id }}" required/>
-                            <input name="res_item_duplicar_id" id="res_item_duplicar_id" type="hidden" value="" required/>
+                            <input name="res_id" id="res_id" type="hidden" value="{{ $restorant_id }}" required>
+                            <input name="res_item_duplicar_id" id="res_item_duplicar_id" type="hidden" value="" required="">
                         </form>
                         </div>
                     </div>
