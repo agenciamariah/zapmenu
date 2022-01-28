@@ -242,11 +242,17 @@ class ItemsController extends Controller
 
         $restorant = Restorant::findOrFail($request->res_id);
 
-        $category = Categories::where(['restorant_id' => $request->res_id])->get();
+        $categorys = Categories::where(['restorant_id' => $request->res_id])->get();
 
-        foreach($category->items as $item){
-            $item->delete();
+        foreach($categorys as $category){
+            $parent = Categories::find($id);
+
+            foreach($parent->items as $item){
+                $item->delete();
+            }
+
         }
+
 
         Excel::import(new ItemsImport($restorant), request()->file('items_excel'));
 
