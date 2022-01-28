@@ -61,7 +61,7 @@
                             <div>
                                 <select class="form-control noselecttwo" name="active" id="cat_active">
                                     <option value="1">Visível</option>
-                                    <option value="0">Invisivel</option>
+                                    <option value="2">Invisivel</option>
                                 </select>
                                 
 
@@ -254,7 +254,7 @@
 <div class="modal fade" id="modal-invisivel-category" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
         <div class="modal-content">
-            <form role="form" method="post" action="" enctype="multipart/form-data">
+            <form role="form" method="post" action="/categories/85" enctype="multipart/form-data">
             @method('put')
             <div class="modal-header">
                 <h3 class="modal-title" id="modal-title-new-item">{{ __('Duplicar o Produto') }}</h3>
