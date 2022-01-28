@@ -59,7 +59,7 @@
                                 @endif
                             </div>
                             <div>
-                                <select class="form-control" name="active" id="cat_active">
+                                <select class="form-control noselecttwo" name="active" id="cat_active">
                                     <option value="1">Visível</option>
                                     <option value="0">Invisivel</option>
                                 </select>
@@ -235,6 +235,45 @@
                             @csrf
                             <input name="res_id" id="res_id" type="hidden" value="{{ $restorant_id }}" required>
                             <input name="res_item_duplicar_id" id="res_item_duplicar_id" type="hidden" value="" required="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">{{ __('Cancelar') }}</button>
+                <button type="button" class="btn btn-duplicar-save btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
+                                       
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="modal-invisivel-item" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+            <form role="form" method="post" action="" enctype="multipart/form-data">
+            @method('put')
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title-new-item">{{ __('Duplicar o Produto') }}</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="card bg-secondary shadow border-0">
+                   <div class="card-body px-lg-5 py-lg-5" style="text-align: left;padding-left: 0px !important;padding-top: 10px !important;">
+                        <div class="col-md-10 offset-md-1">
+                            <div class="form-group" style="text-align: left;">
+
+                                <label class="form-control-label" for="items_excel">Salve para deixar essa categoria <b style="color: black;">invisivel</b> para os visitantes.</label>
+
+                            </div>
+                            @csrf
+                            <input name="category_name" id="category_active_input_name" type="hidden" value="" required>
+                            <input name="active" id="category_active_input_value" type="hidden" value="1" required="">
                         </div>
                     </div>
                 </div>
