@@ -205,6 +205,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/item/change/{item}', 'ItemsController@change');
     Route::post('/{item}/extras', 'ItemsController@storeExtras')->name('extras.store');
     Route::post('/{item}/extras/edit', 'ItemsController@editExtras')->name('extras.edit');
+    Route::post('/item/duplicate', 'ItemsController@replicate')->name('items.replicate');
     Route::delete('/{item}/extras/{extras}', 'ItemsController@deleteExtras')->name('extras.destroy');
 
     Route::resource('categories', 'CategoriesController');

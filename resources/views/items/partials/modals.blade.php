@@ -208,6 +208,7 @@
 <div class="modal fade" id="modal-duplicar-item" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
         <div class="modal-content">
+            <form role="form" method="post" action="https://app.zapentrega.com/item/duplicate" enctype="multipart/form-data">
             <div class="modal-header">
                 <h3 class="modal-title" id="modal-title-new-item">{{ __('Duplicar o Produto') }}</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -218,7 +219,6 @@
                 <div class="card bg-secondary shadow border-0">
                    <div class="card-body px-lg-5 py-lg-5" style="text-align: left;padding-left: 0px !important;padding-top: 10px !important;">
                         <div class="col-md-10 offset-md-1">
-                        <form role="form" method="post" action="https://app.zapentrega.com/import/items" enctype="multipart/form-data">
                             <div class="form-group" style="text-align: left;">
 
                                 <label class="form-control-label" for="items_excel">Salve para fazer uma <b style="color: black;">cópia</b> do seu produto.</label>
@@ -226,16 +226,16 @@
                             </div>
                             <input name="res_id" id="res_id" type="hidden" value="{{ $restorant_id }}" required>
                             <input name="res_item_duplicar_id" id="res_item_duplicar_id" type="hidden" value="" required="">
-                        </form>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Cancelar') }}</button>
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">{{ __('Cancelar') }}</button>
                 <button type="button" class="btn btn-plano-2 btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
                                        
             </div>
+            </form>
         </div>
     </div>
 </div>

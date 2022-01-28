@@ -262,12 +262,16 @@ class ItemsController extends Controller
         ]);
     }
 
-    public function replicate()
+
+
+    public function replicate(Request $request)
     {
+        // $this->adminOnly();
+        $thePOST = $request->all();
         //$itemToDuplicate = strip_tags($request->id);
         // Retrieve the first task
         $ItemDuplicated = Item::first();
-        $ItemDuplicated = Item::findOrFail(370); // pizza teste
+        $ItemDuplicated = Item::findOrFail($thePOST['res_item_duplicar_id']); // pizza teste
 
         $newItemDuplicated = $ItemDuplicated->replicate();
         $newItemDuplicated->name = "Item Duplicado"; // the new project_id
