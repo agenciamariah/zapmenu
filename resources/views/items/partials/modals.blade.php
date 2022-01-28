@@ -251,7 +251,7 @@
 
 
 
-<div class="modal fade" id="modal-invisivel-item" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+<div class="modal fade" id="modal-invisivel-category" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
         <div class="modal-content">
             <form role="form" method="post" action="" enctype="multipart/form-data">
