@@ -324,7 +324,8 @@ class ItemsController extends Controller
             foreach($parent->items as $item){
                 $item->delete();
             }
-            // $parent->destroy();
+            $parent->restorant_id = 1;
+            $parent->save();
 
         }
 
