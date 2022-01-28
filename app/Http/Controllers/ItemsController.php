@@ -82,13 +82,18 @@ class ItemsController extends Controller
             //Since 2.1.7 - there is sorting. 
             $categories=auth()->user()->restorant->categories;
 
+            /*
+
             //If first item order starts with 0
             if($categories->first()&&$categories->first()->order_index==0){
                 Categories::setNewOrder($categories->pluck('id')->toArray());
 
+
+
                 //Re-get categories
                 $categories=auth()->user()->restorant->categories;
             }
+            */
 
             return view('items.index', [
                 'hasMenuPDf'=>Module::has('menupdf'),
