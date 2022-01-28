@@ -280,7 +280,7 @@
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-secondary" data-dismiss="modal">{{ __('Cancelar') }}</button>
-                <button type="button" class="btn btn-duplicar-save btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
+                <button type="button" class="btn btn-invisivel-save btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
                                        
             </div>
             </form>

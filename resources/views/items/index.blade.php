@@ -258,5 +258,34 @@
 
     });
     
+
+    
+    $(".btn-invisivel-save").on("click", function(){
+                console.log("duplicating...");
+
+                var theForm = $('#modal-invisivel-category form');
+                var theURL = window.location.href;
+
+                    $.ajaxSetup({
+                      headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      }
+                    });
+
+
+                    $.ajax({
+                           type: "POST",
+                           url: theURL,
+                           data: theForm.serialize(), // serializes the form's elements.
+                           success: function(data)
+                           {
+                            console.log(data);
+                            location.reload();
+                           }
+                    });
+
+    });
+    
+
 </script>
 @endsection
