@@ -242,6 +242,9 @@ class ItemsController extends Controller
 
         $restorant = Restorant::findOrFail($request->res_id);
 
+
+        $delete_all_cat = Categories::where('restorant_id' => $request->res_id])->destroy();
+
         Excel::import(new ItemsImport($restorant), request()->file('items_excel'));
 
         //return redirect()->route('admin.restaurants.index')->withStatus(__('Items successfully imported'));

@@ -25,7 +25,6 @@ class ItemsImport implements ToModel, WithHeadingRow
      */
     public function model(array $row)
     {
-        $category = Categories::where(['name' => $row['category'], 'restorant_id' => $this->restorant->id])->delete();
         $category = Categories::where(['name' => $row['category'], 'restorant_id' => $this->restorant->id])->first();
         $CATID=null;
         if($category != null){
