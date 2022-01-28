@@ -78,8 +78,11 @@
                             </div>
                         @endif
                        
+                        @php
+                        var_dump($categories);
+                        @endphp
                         @foreach ($categories as $index => $category)
-                        @if($category->active != 1)
+                        @if($category->active == 1 || $category->active == 2)
                         <div class="alert alert-default">
                             <div class="row">
                                 <div class="col">
@@ -159,7 +162,7 @@
                             </div>
                         </div>
                         @endif
-                        @if($category->active != 1)
+                        @if($category->active == 1 || $category->active == 2)
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
                                 <div class="row row-grid">
