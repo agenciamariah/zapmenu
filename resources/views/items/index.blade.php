@@ -78,11 +78,8 @@
                             </div>
                         @endif
                        
-                        @php
-                        var_dump($categories);
-                        @endphp
                         @foreach ($categories as $index => $category)
-                        @if($category->active == 1 || $category->active == 2)
+                        @if($category->active == 1)
                         <div class="alert alert-default">
                             <div class="row">
                                 <div class="col">
@@ -117,7 +114,7 @@
                                             <span class="btn-inner--icon"><i class="fa fa-file"></i></span>
                                         </button>
 
-                                        @if($category->active == 1)
+                                        @if($category->visible == 0)
                                         <button onclick="javascript: $('#category_active_input_name_visivel').val({{ $category->name }});" style="background: #ed89ff; color: white;" class="btn btn-icon btn-1 btn-sm btn-visivel" type="button" id="edit" data-toggle="modal" data-target="#modal-invisivel-category" data-toggle="tooltip" data-placement="top" title="Tornar invisível" data-id="<?= $category->id ?>" data-name="<?= $category->name ?>" >
                                             <span class="btn-inner--icon"><i class="fa fa-eye"></i></span>
                                         </button>
@@ -162,7 +159,7 @@
                             </div>
                         </div>
                         @endif
-                        @if($category->active == 1 || $category->active == 2)
+                        @if($category->active == 1)
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
                                 <div class="row row-grid">
