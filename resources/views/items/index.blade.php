@@ -79,7 +79,7 @@
                         @endif
                        
                         @foreach ($categories as $index => $category)
-                        @if($category->active == 2)
+                        @if($category->active != 1)
                         <div class="alert alert-default">
                             <div class="row">
                                 <div class="col">
@@ -159,7 +159,7 @@
                             </div>
                         </div>
                         @endif
-                        @if($category->active == 2)
+                        @if($category->active != 1)
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
                                 <div class="row row-grid">
