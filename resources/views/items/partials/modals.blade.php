@@ -232,8 +232,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-duplicar-save btn-secondary" data-dismiss="modal">{{ __('Cancelar') }}</button>
-                <button type="button" class="btn btn-plano-2 btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">{{ __('Cancelar') }}</button>
+                <button type="button" class="btn btn-duplicar-save btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
                                        
             </div>
             </form>
@@ -262,6 +262,7 @@
                            success: function(data)
                            {
                             console.log(data);
+                            window.reload();
                            }
                     });
 
