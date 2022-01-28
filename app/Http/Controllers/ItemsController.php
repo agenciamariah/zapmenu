@@ -276,6 +276,16 @@ class ItemsController extends Controller
         $newItemDuplicated = $ItemDuplicated->replicate();
         $newItemDuplicated->name = "Item Duplicado"; // the new project_id
         $newItemDuplicated->save();
+
+
+        return response()->json([
+            'data' => [
+                'newItemDuplicated' => $newItemDuplicated->id,
+            ],
+            'status' => true,
+            'errMsg' => '',
+        ]);
+
     }
 
     public function storeExtras(Request $request, Items $item)
