@@ -240,32 +240,3 @@
         </div>
     </div>
 </div>
-
-<script type="text/javascript">
-    $(".btn-duplicar-save").on("click", function(){
-                console.log("duplicating...");
-
-                var theForm = $('.#modal-duplicar-item form');
-                var theURL = $('.#modal-duplicar-item form').attr("action");
-
-                    $.ajaxSetup({
-                      headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                      }
-                    });
-
-
-                    $.ajax({
-                           type: "POST",
-                           url: theURL,
-                           data: theForm.serialize(), // serializes the form's elements.
-                           success: function(data)
-                           {
-                            console.log(data);
-                            window.reload();
-                           }
-                    });
-
-    });
-    
-</script>
