@@ -244,10 +244,82 @@ class ItemsController extends Controller
 
         $categorys = Categories::where(['restorant_id' => $request->res_id])->get();
 
-        var_dump($categorys);
         /*
+        object(Illuminate\Database\Eloquent\Collection)#2030 (1) { ["items":protected]=> array(1) {
+         [0]=> object(App\Categories)#2029 (30) {
+         [
+         "table":protected]=> string(10) "categories" [
+         "translatable"]=> array(1) {
+         [
+         0]=> string(4) "name" } [
+         "sortable"]=> array(2) {
+         [
+         "order_column_name"]=> string(11) "order_index" [
+         "sort_when_creating"]=> bool(true) } [
+         "connection":protected]=> string(5) "mysql" [
+         "primaryKey":protected]=> string(2) "id" [
+         "keyType":protected]=> string(3) "int" [
+         "incrementing"]=> bool(true) [
+         "with":protected]=> array(0) {
+         } [
+         "withCount":protected]=> array(0) {
+         } [
+         "perPage":protected]=> int(15) [
+         "exists"]=> bool(true) [
+         "wasRecentlyCreated"]=> bool(false) [
+         "attributes":protected]=> array(7) {
+         [
+         "id"]=> int(74) [
+         "name"]=> string(15) "{
+        "pt":"Pizzas"}" [
+        "restorant_id"]=> int(34) [
+        "created_at"]=> string(19) "2021-11-29 15:36:53" [
+        "updated_at"]=> string(19) "2022-01-28 12:56:17" [
+        "order_index"]=> int(3) [
+        "active"]=> int(1) } [
+        "original":protected]=> array(7) {
+         [
+         "id"]=> int(74) [
+         "name"]=> string(15) "{
+        "pt":"Pizzas"}" [
+        "restorant_id"]=> int(34) [
+        "created_at"]=> string(19) "2021-11-29 15:36:53" [
+        "updated_at"]=> string(19) "2022-01-28 12:56:17" [
+        "order_index"]=> int(3) [
+        "active"]=> int(1) } [
+        "changes":protected]=> array(0) {
+         } [
+         "casts":protected]=> array(0) {
+         } [
+         "classCastCache":protected]=> array(0) {
+         } [
+         "dates":protected]=> arr'ay(0) {
+         } [
+         "dateFormat":protected]=> NULL [
+         "appends":protected]=> array(0) {
+         } [
+         "dispatchesEvents":protected]=> array(0) {
+         } [
+         "observables":protected]=> array(0) {
+         } [
+         "relations":protected]=> array(0) {
+         } [
+         "touches":protected]=> array(0) {
+         } [
+         "timestamps"]=> bool(true) [
+         "hidden":protected]=> array(0) {
+         } [
+         "visible":protected]=> array(0) {
+         } [
+         "fillable":protected]=> array(0) { } [
+         "guarded":protected]=> array(1) { [
+         0]=> string(1) "*" } [
+         "translationLocale":protected]=> NULL } } }
+
+        */
+
         foreach($categorys as $category){
-            $parent = Categories::find($category->$id);
+            $parent = Categories::find($category->id);
 
             foreach($parent->items as $item){
                 $item->delete();
@@ -260,7 +332,6 @@ class ItemsController extends Controller
 
         //return redirect()->route('admin.restaurants.index')->withStatus(__('Items successfully imported'));
         return back()->withStatus(__('Items successfully imported'));
-        */
     }
 
     public function change(Items $item, Request $request)
