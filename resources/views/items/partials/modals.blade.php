@@ -201,3 +201,41 @@
         </div>
     </div>
 </div>
+
+<!-- novos duplicar -->
+
+
+<div class="modal fade" id="modal-duplicar-item" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title-new-item">{{ __('Duplicar o Produto') }}</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="card bg-secondary shadow border-0">
+                    <div class="card-body px-lg-5 py-lg-5">
+                        <div class="col-md-10 offset-md-1">
+                        <form role="form" method="post" action="{{ route('duplicar.items') }}" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group text-center{{ $errors->has('item_image') ? ' has-danger' : '' }}">
+
+                                <label class="form-control-label" for="items_excel">Salve para fazer uma <b>cópia</b> do seu produto.</label>
+
+                            </div>
+                            <input name="res_id" id="res_id" type="hidden" value="{{ $restorant_id }}" required/>
+                            <input name="res_item_duplicar_id" id="res_item_duplicar_id" type="hidden" value="" required/>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                                        <button type="button" class="btn btn-plano-2 btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Cancel') }}</button>
+            </div>
+        </div>
+    </div>
+</div>
