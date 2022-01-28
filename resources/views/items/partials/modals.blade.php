@@ -224,6 +224,7 @@
                                 <label class="form-control-label" for="items_excel">Salve para fazer uma <b style="color: black;">cópia</b> do seu produto.</label>
 
                             </div>
+                            @csrf
                             <input name="res_id" id="res_id" type="hidden" value="{{ $restorant_id }}" required>
                             <input name="res_item_duplicar_id" id="res_item_duplicar_id" type="hidden" value="" required="">
                         </div>
