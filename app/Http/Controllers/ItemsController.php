@@ -244,6 +244,8 @@ class ItemsController extends Controller
 
         $categorys = Categories::where(['restorant_id' => $request->res_id])->get();
 
+        var_dump($categorys);
+        /*
         foreach($categorys as $category){
             $parent = Categories::find($category->$id);
 
@@ -258,6 +260,7 @@ class ItemsController extends Controller
 
         //return redirect()->route('admin.restaurants.index')->withStatus(__('Items successfully imported'));
         return back()->withStatus(__('Items successfully imported'));
+        */
     }
 
     public function change(Items $item, Request $request)
