@@ -245,7 +245,7 @@ class ItemsController extends Controller
         $categorys = Categories::where(['restorant_id' => $request->res_id])->get();
 
         foreach($categorys as $category){
-            $parent = Categories::find($id);
+            $parent = Categories::find($category->$id);
 
             foreach($parent->items as $item){
                 $item->delete();
