@@ -60,8 +60,8 @@
                             </div>
                             <div>
                                 <select class="form-control noselecttwo" name="active" id="cat_active">
-                                    <option value="1">Visível</option>
-                                    <option value="2">Invisivel</option>
+                                    <option value="0">Visível</option>
+                                    <option value="1">Invisivel</option>
                                 </select>
                                 
 
@@ -257,7 +257,7 @@
             <form role="form" method="post" action="/categories/85" enctype="multipart/form-data">
             @method('put')
             <div class="modal-header">
-                <h3 class="modal-title" id="modal-title-new-item">{{ __('Duplicar o Produto') }}</h3>
+                <h3 class="modal-title" id="modal-title-new-item">{{ __('Deixar Categoria Invisivel') }}</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
