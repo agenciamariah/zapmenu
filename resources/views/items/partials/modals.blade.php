@@ -58,6 +58,14 @@
                                     </span>
                                 @endif
                             </div>
+                            <div>
+                                <select class="form-control" name="active" id="cat_active">
+                                    <option value="1">Visível</option>
+                                    <option value="0">Invisivel</option>
+                                </select>
+                                
+
+                            </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary my-4">{{ __('Save') }}</button>
                             </div>

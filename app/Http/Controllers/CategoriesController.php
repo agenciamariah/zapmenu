@@ -80,6 +80,7 @@ class CategoriesController extends Controller
     public function update(Request $request, Categories $category)
     {
         $category->name = $request->category_name;
+        $category->active = $request->active;
         $category->update();
 
         return redirect()->back()->withStatus(__('Category name successfully updated.'));
