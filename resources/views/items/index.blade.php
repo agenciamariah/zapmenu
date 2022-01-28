@@ -158,7 +158,6 @@
                                 <div class="row row-grid">
                                     @foreach ( $category->items as $item)
                                         <div class="col-lg-3">
-                                            <a href="{{ route('items.edit', $item) }}">
                                                 <div class="card">
                                                     <img class="card-img-top" src="{{ $item->logom }}" alt="...">
                                                     <div class="card-body">
@@ -168,7 +167,9 @@
                                                         <span class="badge badge-primary badge-pill">@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
 
                                                         <p class="mt-3 mb-0 text-sm">
+                                            <a href="{{ route('items.edit', $item) }}">
                                                             <span class="text-success mr-2">{{ __("EDITAR") }}</span>
+                                            </a>
                                                             <span data-item-id="{{ $item->id }}" class="text btn-duplicar-item mr-2">{{ __("DUPLICAR") }}</span>
                                                             @if($item->available == 1)
                                                             <span class="text mr-2">{{ __("VISIVEL") }}</span>
@@ -179,7 +180,6 @@
                                                     </div>
                                                 </div>
                                                 <br/>
-                                            </a>
                                         </div>
                                     @endforeach
                                     @if($canAdd)
