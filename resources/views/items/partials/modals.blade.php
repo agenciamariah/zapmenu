@@ -218,8 +218,7 @@
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="col-md-10 offset-md-1">
-                        <form role="form" method="post" action="{{ route('duplicar.items') }}" enctype="multipart/form-data">
-                            @csrf
+                        <form role="form" method="post" action="{{ route('import.items') }}" enctype="multipart/form-data">
                             <div class="form-group text-center{{ $errors->has('item_image') ? ' has-danger' : '' }}">
 
                                 <label class="form-control-label" for="items_excel">Salve para fazer uma <b>cópia</b> do seu produto.</label>
