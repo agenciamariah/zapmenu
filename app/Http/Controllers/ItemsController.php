@@ -324,7 +324,7 @@ class ItemsController extends Controller
             foreach($parent->items as $item){
                 $item->delete();
             }
-            $parent->destroy();
+            // $parent->destroy();
 
         }
 
