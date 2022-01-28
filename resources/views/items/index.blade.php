@@ -170,7 +170,9 @@
                                             <a href="{{ route('items.edit', $item) }}">
                                                             <span class="text-success mr-2">{{ __("EDITAR") }}</span>
                                             </a>
-                                                            <span data-item-id="{{ $item->id }}" class="text btn-duplicar-item mr-2">{{ __("DUPLICAR") }}</span>
+                                                            
+                                            <button type="button" class="" data-toggle="modal" data-target="#modal-duplicar-item" onclick="javascript: var ItemDuplicarId = {{ $item->name }};" style=" background: transparent; border: none; "> <span class="btn-inner--icon" style=" color: #abb2c1; text-transform: uppercase; ">DUPLICAR</span> </button>
+                                            
                                                             @if($item->available == 1)
                                                             <span class="text mr-2">{{ __("VISIVEL") }}</span>
                                                             @else
