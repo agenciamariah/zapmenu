@@ -262,6 +262,18 @@ class ItemsController extends Controller
         ]);
     }
 
+    public function replicate()
+    {
+        //$itemToDuplicate = strip_tags($request->id);
+        // Retrieve the first task
+        $ItemDuplicated = Item::first();
+        $ItemDuplicated = Item::findOrFail(370); // pizza teste
+
+        $newItemDuplicated = $ItemDuplicated->replicate();
+        $newItemDuplicated->name = "Item Duplicado"; // the new project_id
+        $newItemDuplicated->save();
+    }
+
     public function storeExtras(Request $request, Items $item)
     {
         //dd($request->all());

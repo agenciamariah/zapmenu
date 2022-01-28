@@ -232,8 +232,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                                        <button type="button" class="btn btn-plano-2 btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Cancel') }}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Cancelar') }}</button>
+                <button type="button" class="btn btn-plano-2 btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
+                                       
             </div>
         </div>
     </div>
