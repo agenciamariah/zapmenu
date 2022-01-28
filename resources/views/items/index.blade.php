@@ -168,10 +168,12 @@
                                                         <span class="badge badge-primary badge-pill">@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
 
                                                         <p class="mt-3 mb-0 text-sm">
+                                                            <span class="text-success mr-2">{{ __("EDITAR") }}</span>
+                                                            <span data-item-id="{{ $item->id }}" class="text btn-duplicar-item mr-2">{{ __("DUPLICAR") }}</span>
                                                             @if($item->available == 1)
-                                                            <span class="text-success mr-2">{{ __("AVAILABLE") }}</span>
+                                                            <span class="text mr-2">{{ __("VISIVEL") }}</span>
                                                             @else
-                                                            <span class="text-danger mr-2">{{ __("UNAVAILABLE") }}</span>
+                                                            <span class="text mr-2">{{ __("INVISIVEL") }}</span>
                                                             @endif
                                                         </p>
                                                     </div>
