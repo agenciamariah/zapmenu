@@ -282,6 +282,10 @@
 
 
 <script type="text/javascript">
+
+    setTimeout(function(){
+
+
     $(".btn-duplicar-save").on("click", function(){
                 console.log("duplicating...");
 
@@ -302,10 +306,12 @@
                            success: function(data)
                            {
                             console.log(data);
-                            window.reload();
+                            location.reload();
                            }
                     });
 
     });
+
+    }, 3000);
     
 </script>
