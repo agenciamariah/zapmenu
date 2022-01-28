@@ -115,7 +115,7 @@
                                         </button>
 
                                         @if($category->active == 1)
-                                        <button onclick="javascript: $('#category_active_input_name_visivel').val({{ $category->name }});" style="background: #ed89ff; color: white;" class="btn btn-icon btn-1 btn-sm btn-visivel" type="button" id="edit" data-toggle="modal" data-target="#modal-visivel-category" data-toggle="tooltip" data-placement="top" title="Tornar invisível" data-id="<?= $category->id ?>" data-name="<?= $category->name ?>" >
+                                        <button onclick="javascript: $('#category_active_input_name_visivel').val({{ $category->name }});" style="background: #ed89ff; color: white;" class="btn btn-icon btn-1 btn-sm btn-visivel" type="button" id="edit" data-toggle="modal" data-target="#modal-invisivel-category" data-toggle="tooltip" data-placement="top" title="Tornar invisível" data-id="<?= $category->id ?>" data-name="<?= $category->name ?>" >
                                             <span class="btn-inner--icon"><i class="fa fa-eye"></i></span>
                                         </button>
                                         @else
