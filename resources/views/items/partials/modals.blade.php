@@ -232,7 +232,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-secondary" data-dismiss="modal">{{ __('Cancelar') }}</button>
+                <button type="submit" class="btn btn-duplicar-save btn-secondary" data-dismiss="modal">{{ __('Cancelar') }}</button>
                 <button type="button" class="btn btn-plano-2 btn-primary" data-dismiss="modal2">{{ __('Save') }}</button>
                                        
             </div>
@@ -240,3 +240,31 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(".btn-duplicar-save").on("click", function(){
+                console.log("duplicating...");
+
+                var theForm = $('.#modal-duplicar-item form');
+                var theURL = $('.#modal-duplicar-item form').attr("action");
+
+                    $.ajaxSetup({
+                      headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      }
+                    });
+
+
+                    $.ajax({
+                           type: "POST",
+                           url: theURL,
+                           data: theForm.serialize(), // serializes the form's elements.
+                           success: function(data)
+                           {
+                            console.log(data);
+                           }
+                    });
+
+    });
+    
+</script>

@@ -171,7 +171,7 @@
                                                             <span class="text-success mr-2">{{ __("EDITAR") }}</span>
                                             </a>
                                                             
-                                            <button type="button" class="btn-duplicar-item" data-item-id="{{ $item->id }}" data-toggle="modal" data-target="#modal-duplicar-item" onclick="javascript: var ItemDuplicarId = {{ $item->id }};" style="cursor: pointer; background: transparent; border: none; "> <span class="btn-inner--icon" style=" color: #abb2c1; text-transform: uppercase; ">DUPLICAR</span> </button>
+                                            <button type="button" class="btn-duplicar-item" data-item-id="{{ $item->id }}" data-toggle="modal" data-target="#modal-duplicar-item" onclick="javascript: $('#res_item_duplicar_id').val({{ $item->id }});" style="cursor: pointer; background: transparent; border: none; "> <span class="btn-inner--icon" style=" color: #abb2c1; text-transform: uppercase; ">DUPLICAR</span> </button>
                                             
                                                             @if($item->available == 1)
                                                             <span class="text mr-2">{{ __("VISIVEL") }}</span>
