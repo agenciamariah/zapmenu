@@ -19,6 +19,7 @@
             <br />
             <div  v-for="item in items" class="items col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
                 <div class="info-block block-info clearfix" v-cloak>
+                    <p id="erase-all">@{{ item.attributes.item_orcamento }}</p>
                     <div class="square-box pull-left">
                     <figure>
                         <img :src="item.attributes.image" :data-src="item.attributes.image"  class="productImage" width="100" height="105" alt="">
