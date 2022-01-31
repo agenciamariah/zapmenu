@@ -312,7 +312,7 @@ class RestorantController extends Controller
             $uuid = Str::uuid()->toString();
             $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
             $restaurant->setConfig('ad1_image',$uuid);
-            // $restaurant->ad1_image = $request->ad1_image;
+            $restaurant->ad1_image = $request->ad1_image;
         }
         $restaurant->update();
 
