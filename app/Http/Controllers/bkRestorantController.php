@@ -298,6 +298,12 @@ class RestorantController extends Controller
             $restaurant->setMultipleConfig($request->custom);
         }
 
+        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated1.'));
+    }
+
+
+    public function updateADS(Request $request, Restorant $restaurant){
+        
         // ads start
         $restaurant->ad1_link = $request->ad1_link;
 

@@ -14,8 +14,7 @@
             @method('put')
 
 
-            <input step=".01" type="text" name="ad1_link" id="ad1_link" class="form-control form-control" placeholder="ad1" value="{{$restorant->ad1_link}}" required="">
-
+            
             @include('partials.fields',['fields'=>$appFields])
             <div class="text-center">
                 <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
