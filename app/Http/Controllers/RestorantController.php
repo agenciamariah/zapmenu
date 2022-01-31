@@ -65,6 +65,23 @@ class RestorantController extends Controller
         }
     }
 
+
+
+    public function updateADS(Request $request, Restorant $restaurant)
+    {
+            $restaurant->ad1_link = $request->ad1_link;
+
+            if ($request->hasFile('ad1_image')) {
+           
+                $uuid = Str::uuid()->toString();
+                $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
+                $restaurant->setConfig('ad1_image',$uuid);
+            }
+    
+            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated2.'));
+    
+    }
+
     public function loginas(Restorant $restaurant)
     {
         if (auth()->user()->hasRole('admin')) {
@@ -313,21 +330,6 @@ class RestorantController extends Controller
 
         return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated1.'));
     }
-
-    public function updateADS(Request $request, Restorant $restaurant)
-        {
-            $restaurant->ad1_link = $request->ad1_link;
-
-            if ($request->hasFile('ad1_image')) {
-           
-                $uuid = Str::uuid()->toString();
-                $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
-                $restaurant->setConfig('ad1_image',$uuid);
-            }
-    
-            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated2.'));
-    
-        }
 
     /**
      * Update the specified resource in storage.
