@@ -4,6 +4,9 @@
         <h3>{{ __('Items') }}<span class="font-weight-light"></span></h3>
       </div>
       <style type="text/css">
+      .info-block .item-type-1 {
+        display: none;
+      }
       .info-block .item-type-2 {
         display: none;
       }
@@ -61,6 +64,10 @@ $(".items").each(function(){
         var itemBtn2 = $(this).find(".row > button:first-child");
         itemBtn2.remove();
 
+    }
+    else {
+        var itemText1 = $(this).find(".item-type-1");
+        itemText1.attr("style", "display: block;")
     }
 });
 
