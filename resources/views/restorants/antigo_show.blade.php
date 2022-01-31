@@ -12,9 +12,6 @@
     #modalPrice {
         display: none;
     }
-    .item-current-box #res_title {
-        font-size: 18px;
-    }
 </style>
 @endsection
 
@@ -47,7 +44,7 @@
                         <h1 class="display-3 text-white" data-toggle="modal" data-target="#modal-restaurant-info" style="cursor: pointer;">{{ $restorant->name }}</h1>
                         <p class="display-4" style="margin-top: 120px">{{ $restorant->description }}</p>
 
-                        <p><i class="ni ni-watch-time"></i> @if(!empty($openingTime))<span class="closed_time">{{__('Opens')}} {{ $openingTime }}</span>@endif @if(!empty($closingTime))<span class="opened_time">{{__('Opened until')}} {{ $closingTime }}</span> @endif |   | @endif @if(!empty($restorant->phone)) <i class="ni ni-mobile-button"></i> <a href="tel:{{$restorant->phone}}">{{ $restorant->phone }} </a> @endif | <i class="ni ni-credit-card"></i> <span class="opened_time">Pagamento: Cartão e dinheiro</span></p>
+                        <p><i class="ni ni-watch-time"></i> @if(!empty($openingTime))<span class="closed_time">{{__('Opens')}} {{ $openingTime }}</span>@endif @if(!empty($closingTime))<span class="opened_time">{{__('Opened until')}} {{ $closingTime }}</span> @endif |   @if(!empty($restorant->address))<i class="ni ni-pin-3"></i></i> <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ urlencode($restorant->address) }}">{{ $restorant->address }}</a>  | @endif @if(!empty($restorant->phone)) <i class="ni ni-mobile-button"></i> <a href="tel:{{$restorant->phone}}">{{ $restorant->phone }} </a> @endif</p>
                     </div>
                 </div>
             </div>
@@ -212,28 +209,6 @@
             </ul>
         </div>
     @endsection
-
-<footer class="footer footer_restaurante">
-    <div class="container">
-      <div class="row align-items-center justify-content-md-between">
-        <div class="col-md-12">
-            <div class="logo">
-                <img src="https://app.zapentrega.com/uploads/settings/81dd259b-fd31-4ba2-af91-64ab5e6b42e0_logo.jpg" />
-            </div>
-            <div class="logo-text">
-                <p>{{$restorant->name}} |  @if(!empty($restorant->phone))  <i class="ni ni-mobile-button"></i> <a href="tel:{{$restorant->phone}}">{{ $restorant->phone }} </a> @endif</p>
-                <p>@if(!empty($restorant->address))<i class="ni ni-pin-3"></i></i> <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ urlencode($restorant->address) }}">{{ $restorant->address }}</a>  | @endif</p>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="banner-footer">
-            <img src="https://previews.123rf.com/images/ylivdesign/ylivdesign1710/ylivdesign171002102/87385698-postal-office-banner-horizontal-concept-flat-illustration-of-postal-office-banner-horizontal-vector-.jpg" />
-            </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
     @section('addiitional_button_1_mobile')
         <div class="dropdown mobile_menu">
 
