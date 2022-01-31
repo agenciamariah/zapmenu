@@ -243,6 +243,7 @@
     var itemAtualOrcamento = false;
 
     $(".item-current-box").on("click", function(){
+        console.log("ItemCurrentBox Click");
         if($(this).hasClass("item-type-2")){
             itemAtualOrcamento = true;
         }
