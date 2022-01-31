@@ -15,7 +15,8 @@
                     </div>
                     <h6 class="product-item_title">@{{ item.name }}</h6>
                     @php
-                    var_dump($item)
+                    var_dump(item);
+                    var_dump($item);
                     @endphp
                     <p class="product-item_quantity">@{{ item.quantity }} @{{ item.item_orcamento }} x </p>
                     <div class="row">
