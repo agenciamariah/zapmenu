@@ -269,7 +269,11 @@ function setCurrentItem(id){
     previouslySelected=[];
     $('#modalTitle').text(item.name);
     $('#modalName').text(item.name);
-    $('#modalPrice').html(item.price);
+    if(item.item_orcamento == 2){
+        $('#modalPrice').html("Orçamento");
+    } else {
+        $('#modalPrice').html(item.price);
+    }
     $('#modalID').text(item.id);
     $('#quantity').val(1);
 
