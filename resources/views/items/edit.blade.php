@@ -122,6 +122,7 @@
                                         @include('partials.toggle',['id'=>'itemAvailable','name'=>'Item visível','checked'=>($item->available == 1)])
 
                                         <div class="form-group">
+                                        {{ $item->item_orcamento }}
                                         <input type="hidden" name="item_orcamento" value="1" />
 
                                         <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
