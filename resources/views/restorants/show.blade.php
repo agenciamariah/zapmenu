@@ -122,7 +122,11 @@
                                 @endif
                                 <span class="res_title"><b><a onClick="setCurrentItem({{ $item->id }})" href="javascript:void(0)">{{ $item->name }}</a></b></span><br />
                                 <span class="res_description">{{ $item->short_description}}</span><br />
+                                @if($item->item_orcamento == 2)
+                                <span class="res_mimimum">Orçamento</span>
+                                @else
                                 <span class="res_mimimum">@money($item->price, config('settings.cashier_currency'),config('settings.do_convertion'))</span>
+                                @endif
                             </div>
                         </div>
                     @endforeach
@@ -283,3 +287,4 @@
 
 
     </script>
+
