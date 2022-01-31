@@ -115,7 +115,7 @@
                                         @include('partials.toggle',['id'=>'itemAvailable','name'=>'Item visível','checked'=>($item->available == 1)])
 
                                         <div class="form-group">
-                                        @if ($item->item-orcamento==1)
+                                        @if ($item->item_orcamento==1)
 
                                         <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
                                         <label class="custom-toggle" style="float: right">
