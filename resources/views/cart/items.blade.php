@@ -47,6 +47,7 @@
 @section('js')
 <script type="text/javascript">
 console.log("item type code init: orcamento");
+var hasItemOrcamento = false;
 setTimeout(function(){
 
 $(".items").each(function(){
@@ -54,6 +55,8 @@ $(".items").each(function(){
     console.log(erasePrice);
     erasePrice = erasePrice.html();
     if(erasePrice == "2"){
+        hasItemOrcamento = true;
+        $(".input_item_orcamento").val(hasItemOrcamento);
         var itemText1 = $(this).find(".item-type-1");
         itemText1.attr("style", "display: none;")
         var itemText2 = $(this).find(".item-type-2");

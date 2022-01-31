@@ -13,6 +13,7 @@
                     <strong>{{ $errors->first('comment') }}</strong>
                 </span>
             @endif
+            <input style="display: none;" class="input_item_orcamento" name="item_orcamento" value="false" />
         </div>
       </div>
       <br />
