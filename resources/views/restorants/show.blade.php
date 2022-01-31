@@ -8,6 +8,11 @@
 <meta property="og:image:height" content="400">
 <meta name="og:title" property="og:title" content="{{ $restorant->description }}">
 <meta name="description" content="{{ $restorant->description }}">
+<style type="text/css">
+    #modalPrice {
+        display: none;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -270,10 +275,12 @@
 
         if(textDot.indexOf("R$") !== -1) {
           $(this).html(textDot);
+          $(this).attr('style', 'display: block');
         }
 
         if(itemAtualOrcamento == true) {
             $(this).html('Orçamento');
+            $(this).attr('style', 'display: block');
         }
 
      });
