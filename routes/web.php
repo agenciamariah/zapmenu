@@ -239,10 +239,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Route::post('/plans/{plan}/createapi', 'PlansController@show')->name('plans.show');
     Route::get('/plan/createapi', 'PlansController@createapi')->name('plans.createapi');
-    Route::post('/plan/createapi', 'PlansController@createapi')->name('plans.createapi');
+    Route::post('/plan/createapiPOST', 'PlansController@createapi')->name('plans.createapi');
 
     Route::get('/plan/createapicredit', 'PlansController@createapicredit')->name('plans.createapicredit');
-    Route::post('/plan/createapicredit', 'PlansController@createapicredit')->name('plans.createapi');
+    Route::post('/plan/createapicreditPOST', 'PlansController@createapicredit')->name('plans.createapi');
 
 
     Route::get('qr', 'QRController@index')->name('qr');
