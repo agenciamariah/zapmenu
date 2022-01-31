@@ -104,7 +104,6 @@
                                             <input style="width: 65%; float: left; margin-right: 5%;" type="number" step="any" name="item_price" id="item_price" class="form-control form-control-alternative{{ $errors->has('item_price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('item_price', $item->price) }}" autofocus>
                                             <div style=" width: 30%; margin-top: 12px; float: left; ">
 
-                                            {{ $item->item_somavel }}
                                             @if ($item->item_somavel==2)
                                             <input type="checkbox" name="item_somavel" id="somavel" value="1"><label for="somavel">Item somável</label></div>
                                             @else
@@ -289,9 +288,10 @@
         }
 
     </script>
-@endsection
     <script type="text/javascript">
         @if ($item->item_orcamento==2)
         $("#itemOrcamento").click();
         @endif
     </script>
+
+@endsection
