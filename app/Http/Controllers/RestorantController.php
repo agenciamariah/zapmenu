@@ -311,7 +311,7 @@ class RestorantController extends Controller
         }
         // ads end
 
-        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus($request->ad1_link);
+        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated1.'));
     }
 
     public function updateADS(Request $request, Restorant $restaurant)
@@ -325,7 +325,7 @@ class RestorantController extends Controller
                 $restaurant->setConfig('ad1_image',$uuid);
             }
     
-            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
+            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated2.'));
     
         }
 
@@ -446,9 +446,9 @@ class RestorantController extends Controller
         }
 
         if (auth()->user()->hasRole('admin')) {
-            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
+            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated3.'));
         } else {
-            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
+            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated4.'));
         }
     }
 
@@ -582,7 +582,7 @@ class RestorantController extends Controller
         $hours->{'6_to'} = $request->{'6_to'.$shift} ?? null;
         $hours->update();
 
-        return redirect()->route('admin.restaurants.edit', ['restaurant' => $request->rid])->withStatus(__('Working hours successfully updated!'));
+        return redirect()->route('admin.restaurants.edit', ['restaurant' => $request->rid])->withStatus(__('Working hours successfully updated5!'));
     }
 
     public function showRegisterRestaurant()
