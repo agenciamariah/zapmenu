@@ -52,8 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('dontsyncV1UsersToAuth0', 'SettingsController@dontsyncV1UsersToAuth0')->name('dontsyncV1UsersToAuth0');
         Route::resource('restaurants', 'RestorantController');
         Route::put('restaurants_app_update/{restaurant}', 'RestorantController@updateApps')->name('restaurant.updateApps');
-        // Route::put('restaurants_ads_update/{restaurant}', 'RestorantController@updateADS')->name('restaurant.updateADS');
-        // Route::post('restaurants_ads_update_post/{restaurant}', 'RestorantController@updateADS')->name('restaurant.updateADS');
+        Route::put('restaurants_ads_update/{restaurant}', 'RestorantController@updateADS')->name('restaurant.updateADS');
 
         Route::get('restaurants_add_new_shift/{restaurant}', 'RestorantController@addnewshift')->name('restaurant.addshift');
 
@@ -135,12 +134,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/updateres/location/{restaurant}', 'RestorantController@updateLocation');
     Route::post('/updateres/radius/{restaurant}', 'RestorantController@updateRadius');
-    Route::post('/updateres/ads/{restaurant}', 'RestorantController@newAds');
     Route::post('/updateres/delivery/{restaurant}', 'RestorantController@updateDeliveryArea');
     Route::post('/import/restaurants', 'RestorantController@import')->name('import.restaurants');
     Route::get('/restaurant/{restaurant}/activate', 'RestorantController@activateRestaurant')->name('restaurant.activate');
-    Route::get('/restaurant/{restaurant}/ads', 'RestorantController@activeRest')->name('restaurant.ads');
-    Route::post('/restaurant/{restaurant}/ads', 'RestorantController@activeRestPost')->name('restaurant.ads.post');
     Route::post('/restaurant/workinghours', 'RestorantController@workingHours')->name('restaurant.workinghours');
     Route::post('/restaurant/address','RestorantController@getCoordinatesForAddress')->name('restaurant.coordinatesForAddress');
 
@@ -232,17 +228,17 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('plans', 'PlansController');
     Route::get('/plan', 'PlansController@current')->name('plans.current');
-    // Route::post('/subscribe/plan', 'PlansController@subscribe')->name('plans.subscribe');
+    Route::post('/subscribe/plan', 'PlansController@subscribe')->name('plans.subscribe');
     Route::get('/subscribe/plan3d/{plan}/{user}', 'PlansController@subscribe3dStripe')->name('plans.subscribe_3d_stripe');
-   //  Route::post('/subscribe/update', 'PlansController@adminupdate')->name('update.plan');
+    Route::post('/subscribe/update', 'PlansController@adminupdate')->name('update.plan');
 
 
-    // Route::post('/plans/{plan}/createapi', 'PlansController@show')->name('plans.show');
-    //Route::get('/plan/createapi', 'PlansController@createapi')->name('plans.createapi');
+    Route::post('/plans/{plan}/createapi', 'PlansController@show')->name('plans.show');
+    Route::get('/plan/createapi', 'PlansController@createapi')->name('plans.createapi');
     Route::post('/plan/createapi', 'PlansController@createapi')->name('plans.createapi');
 
-    // Route::get('/plan/createapicredit', 'PlansController@createapicredit')->name('plans.createapicredit');
-    Route::post('/plan/createapicredit', 'PlansController@createapicredit')->name('plans.createapicredit');
+    Route::get('/plan/createapicredit', 'PlansController@createapicredit')->name('plans.createapicredit');
+    Route::post('/plan/createapicredit', 'PlansController@createapicredit')->name('plans.createapi');
 
 
     Route::get('qr', 'QRController@index')->name('qr');

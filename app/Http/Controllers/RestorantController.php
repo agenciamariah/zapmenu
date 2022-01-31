@@ -66,17 +66,7 @@ class RestorantController extends Controller
     }
 
 
-
-    public function activeRest(Restorant $restaurant)
-    {
-            $restaurant->ad1_link = 'teste_ad1';
-            $restaurant->update();
-    
-            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated2.'));
-    
-    }
-
-    public function activeRestPost(Request $request, Restorant $restaurant)
+    public function updateADS(Request $request, Restorant $restaurant)
     {
             $restaurant->ad1_link = $request->ad1_link;
 
@@ -337,6 +327,7 @@ class RestorantController extends Controller
             $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
             $restaurant->setConfig('ad1_image',$uuid);
         }
+        $restaurant->update();
         // ads end
 
         return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated1.'));
@@ -355,6 +346,7 @@ class RestorantController extends Controller
         $restaurant->name = strip_tags($request->name);
         $restaurant->address = strip_tags($request->address);
         $restaurant->phone = strip_tags($request->phone);
+        $restaurant->ad1_link = $request->ad1_link;
         
         $restaurant->description = strip_tags($request->description);
         $restaurant->minimum = strip_tags($request->minimum);
