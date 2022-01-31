@@ -297,7 +297,21 @@ class RestorantController extends Controller
          if($request->has('custom')){
             $restaurant->setMultipleConfig($request->custom);
         }
-        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
+
+        // ads start
+        $restaurant->ad1_link = $request->ad1_link;
+
+        if ($request->hasFile('ad1_image')) {
+           
+            $uuid = Str::uuid()->toString();
+            $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
+            $restaurant->setConfig('ad1_image',$uuid);
+        }
+        $restaurant->update();
+
+        // ads end
+
+        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated1.'));
     }
 
     /**
