@@ -13,18 +13,8 @@
                         <img :src="item.attributes.image" :data-src="item.attributes.image"  class="productImage" width="100" height="105" alt="">
                     </figure>
                     </div>
-                    <h6 class="product-item_title">@{{ item.name }}  @{{ item.item_orcamento }}</h6>
-
-                    <p class="product-item_quantity">@{{ item.quantity }} @{{ item.item_orcamento }} x 
-                         {{{--
-                         @if(item.item.attributes.friendly_price)
-                             @if(item.item_orcamento == 2) 
-                             Orçamento
-                             @else
-                             @{{ item.attributes.friendly_price }}
-                             @endif
-                         @endif
-                        --}}}</p>
+                    <h6 class="product-item_title">@{{ item.name }}</h6>
+                    <p class="product-item_quantity">@{{ item.quantity }} x @{{ item.attributes.friendly_price }}</p>
                     <div class="row">
                         <button type="button" v-on:click="decQuantity(item.id)" :value="item.id" class="btn btn-outline-primary btn-icon btn-sm page-link btn-cart-radius">
                             <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
