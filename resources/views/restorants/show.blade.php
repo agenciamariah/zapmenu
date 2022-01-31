@@ -164,7 +164,7 @@
               <div class="row align-items-center justify-content-md-between">
                 <div class="col-md-12">
                     <div class="logo">
-                        <img src="https://app.zapentrega.com/uploads/settings/81dd259b-fd31-4ba2-af91-64ab5e6b42e0_logo.jpg" />
+                        <img src="{{$restorant->logowide}}" />
                     </div>
                     <div class="logo-text">
                         <p><b>{{$restorant->name}}</b> | @if(!empty($restorant->phone)) <a href="tel:{{$restorant->phone}}">{{ $restorant->phone }} </a> @endif</p>
