@@ -101,8 +101,8 @@
                                         </div>
                                         <div class="form-group{{ $errors->has('item_price') ? ' has-danger' : '' }}">
                                             <label style="float: left; width: 100%;" class="form-control-label" for="item_price">{{ __('Item Price') }}</label>
-                                            <input style="width: 65%; float: left; margin-right: 5%;" type="number" step="any" name="item_price" id="item_price" class="form-control form-control-alternative{{ $errors->has('item_price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('item_price', $item->price) }}" required autofocus>
-                                            <div style=" width: 30%; margin-top: 12px; float: left; "><input type="checkbox" id="somavel" value="Item não somável"><label for="somavel">Item não somável</label></div>
+                                            <input style="width: 65%; float: left; margin-right: 5%;" type="number" step="any" name="item_price" id="item_price" class="form-control form-control-alternative{{ $errors->has('item_price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('item_price', $item->price) }}" autofocus>
+                                            <div style=" width: 30%; margin-top: 12px; float: left; "><input type="checkbox" name="item-somavel" id="somavel" value="2"><label for="somavel">Item não somável</label></div>
                                             @if ($errors->has('item_price'))
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $errors->first('item_price') }}</strong>
@@ -118,7 +118,7 @@
                                         
                                         <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
                                         <label class="custom-toggle" style="float: right">
-                                            <input type="checkbox" name="itemOrcamento" id="itemOrcamento">
+                                            <input type="checkbox" name="item-orcamento" value="2" id="itemOrcamento">
                                             <span class="custom-toggle-slider rounded-circle"></span>
                                         </label>
                                         </div>

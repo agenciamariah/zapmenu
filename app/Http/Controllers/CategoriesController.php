@@ -83,7 +83,7 @@ class CategoriesController extends Controller
         $category->visible = $request->active;
         $category->update();
 
-        return redirect()->back()->withStatus(__('Category name successfully updated.'));
+        return redirect()->back()->withStatus(__('Category successfully updated.'));
     }
 
     /**
