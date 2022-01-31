@@ -116,6 +116,7 @@
 
                                         <div class="form-group">
                                         
+                                        @include('partials.toggle',['id'=>'itemOrcamento','name'=>'item-orcamento','checked'=>($item->item-orcamento == 2)])
                                         <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
                                         <label class="custom-toggle" style="float: right">
                                             <input type="checkbox" name="item-orcamento" value="2" id="itemOrcamento">
