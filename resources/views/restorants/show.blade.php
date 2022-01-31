@@ -173,8 +173,8 @@
                 </div>
                 <div class="col-md-12">
                     <div class="banner-footer">
-                    <a href="https://app.zapentrega.com/" target="_blank">
-                        <img style="width: 100%; height: 150px;" src="https://previews.123rf.com/images/ylivdesign/ylivdesign1710/ylivdesign171002102/87385698-postal-office-banner-horizontal-concept-flat-illustration-of-postal-office-banner-horizontal-vector-.jpg" />
+                    <a href="https://app.zapentrega.com/{{$restorant->ad1_link}}" target="_blank">
+                        <img style="width: 100%; height: 150px;" src="https://app.zapentrega.com/{{$restorant->ad1_image}}" />
                     </a>
                     </div>
                 </div>
