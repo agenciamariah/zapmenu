@@ -114,7 +114,7 @@
                 <div class="row {{ clean(str_replace(' ', '', strtolower($category->name)).strval($key)) }}">
                     @foreach ($category->aitems as $item)
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                            <div class="strip item-id-{{$item->image}}">
+                            <div class="strip item-type-{{$item->item_orcamento}} item-current-box item-id-{{$item->id}}">
                                 @if(!empty($item->image))
                                 <figure>
                                     <a onClick="setCurrentItem({{ $item->id }})" href="javascript:void(0)"><img src="{{ $item->logom }}" loading="lazy" data-src="{{ config('global.restorant_details_image') }}" class="img-fluid lazy" alt=""></a>
@@ -240,7 +240,13 @@
 
     <script type="text/javascript">
 
-    var itemAtualOrcamento = true;
+    var itemAtualOrcamento = false;
+
+    $(".item-current-box").on("click", function(){
+        if($(this).hasClass("item-type-2")){
+            itemAtualOrcamento = true;
+        }
+    });
 
     setInterval(function(){ 
 
