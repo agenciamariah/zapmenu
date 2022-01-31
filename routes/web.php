@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('dontsyncV1UsersToAuth0', 'SettingsController@dontsyncV1UsersToAuth0')->name('dontsyncV1UsersToAuth0');
         Route::resource('restaurants', 'RestorantController');
         Route::put('restaurants_app_update/{restaurant}', 'RestorantController@updateApps')->name('restaurant.updateApps');
+        Route::put('restaurants_ads_update/{restaurant}', 'RestorantController@updateADS')->name('restaurant.updateADS');
 
         Route::get('restaurants_add_new_shift/{restaurant}', 'RestorantController@addnewshift')->name('restaurant.addshift');
 

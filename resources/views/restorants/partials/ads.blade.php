@@ -11,8 +11,8 @@
     <div class="card-body">
 
     <div class="pl-lg-4">
-    <form id="restorant-form" method="post" action="{{ route('admin.restaurants.update', $restorant) }}" autocomplete="off" enctype="multipart/form-data">
-        @csrf
+    <form id="restorant-apps-form" method="post" autocomplete="off" enctype="multipart/form-data" action="{{ route('admin.restaurant.updateADS',$restorant) }}">
+            @csrf
         @method('put')
         <div class="row">
         <div class="col-md-12">

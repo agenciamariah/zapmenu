@@ -300,6 +300,21 @@ class RestorantController extends Controller
         return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
     }
 
+    public function updateADS(Request $request, Restorant $restaurant)
+        {
+            $restaurant->ad1_link = $request->ad1_link;
+
+            if ($request->hasFile('ad1_image')) {
+           
+                $uuid = Str::uuid()->toString();
+                $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
+                $restaurant->setConfig('ad1_image',$uuid);
+            }
+    
+            return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
+    
+        }
+
     /**
      * Update the specified resource in storage.
      *
@@ -307,12 +322,12 @@ class RestorantController extends Controller
      * @param  \App\Restorant  $restaurant
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, Restorant $restaurant)
     {
         $restaurant->name = strip_tags($request->name);
         $restaurant->address = strip_tags($request->address);
         $restaurant->phone = strip_tags($request->phone);
-        $restaurant->ad1_link = $request->ad1_link;
         
         $restaurant->description = strip_tags($request->description);
         $restaurant->minimum = strip_tags($request->minimum);
@@ -365,14 +380,6 @@ class RestorantController extends Controller
             $request->resto_wide_logo->move(public_path($this->imagePath), $uuid.'_original.'.'png');
             $restaurant->setConfig('resto_wide_logo',$uuid);
         }
-
-        if ($request->hasFile('ad1_image')) {
-       
-            $uuid = Str::uuid()->toString();
-            $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
-            $restaurant->setConfig('ad1_image',$uuid);
-        }
-
 
         if ($request->hasFile('resto_wide_logo_dark')) {
        
