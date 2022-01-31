@@ -44,6 +44,8 @@
 @section('js')
 <script type="text/javascript">
 console.log("item type code init: orcamento");
+setTimeout(function(){
+
 $(window).load(function(){
 
 $(".items").each(function(){
@@ -65,5 +67,7 @@ $(".items").each(function(){
 });
 
 });
+
+}, 1000);
 </script>
 @endsection
