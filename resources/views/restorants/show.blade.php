@@ -24,6 +24,7 @@
     .footer_restaurante .logo-text {
         width: 70%;
         float: left;
+        margin-top: 15px;
     } 
     .footer_restaurante .logo-text p {
         margin-bottom: 0px;
