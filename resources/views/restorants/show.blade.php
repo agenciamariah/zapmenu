@@ -167,12 +167,12 @@
                     </div>
                     <div class="logo-text">
                         <p><b>{{$restorant->name}}</b> | @if(!empty($restorant->phone)) <a href="tel:{{$restorant->phone}}">{{ $restorant->phone }} </a> @endif</p>
-                        <p>@if(!empty($restorant->address))<i class="ni ni-pin-3"></i></i> <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ urlencode($restorant->address) }}">{{ $restorant->address }}</a>  | @endif</p>
+                        <p>@if(!empty($restorant->address))<a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ urlencode($restorant->address) }}">{{ $restorant->address }}</a>  | @endif</p>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="banner-footer">
-                    <img src="https://previews.123rf.com/images/ylivdesign/ylivdesign1710/ylivdesign171002102/87385698-postal-office-banner-horizontal-concept-flat-illustration-of-postal-office-banner-horizontal-vector-.jpg" />
+                    <img style="width: 100%; height: 768px;" src="https://previews.123rf.com/images/ylivdesign/ylivdesign1710/ylivdesign171002102/87385698-postal-office-banner-horizontal-concept-flat-illustration-of-postal-office-banner-horizontal-vector-.jpg" />
                     </div>
                 </div>
               </div>
