@@ -115,25 +115,6 @@
                                         @include('partials.toggle',['id'=>'itemAvailable','name'=>'Item visível','checked'=>($item->available == 1)])
 
                                         <div class="form-group">
-                                        @if ($item->item-orcamento == 2)
-
-                                        <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
-                                        <label class="custom-toggle" style="float: right">
-                                            <input type="checkbox" name="item-orcamento" value="2" checked id="itemOrcamento">
-                                            <span class="custom-toggle-slider rounded-circle"></span>
-                                        </label>
-                                        </div>
-                                        @else 
-
-                                        <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
-                                        <label class="custom-toggle" style="float: right">
-                                            <input type="checkbox" name="item-orcamento" value="2" id="itemOrcamento">
-                                            <span class="custom-toggle-slider rounded-circle"></span>
-                                        </label>
-                                        </div>
-
-                                        @endif
-                                        
                                         
                                         @include('partials.toggle',['id'=>'has_variants','name'=>'Enable variants','checked'=>($item->has_variants==1)])
                                     </div>
