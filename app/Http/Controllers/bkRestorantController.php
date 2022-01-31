@@ -298,12 +298,12 @@ class RestorantController extends Controller
             $restaurant->setMultipleConfig($request->custom);
         }
 
-        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated1.'));
+        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
     }
 
 
     public function updateADS(Request $request, Restorant $restaurant){
-        
+
         // ads start
         $restaurant->ad1_link = $request->ad1_link;
 
@@ -312,12 +312,13 @@ class RestorantController extends Controller
             $uuid = Str::uuid()->toString();
             $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
             $restaurant->setConfig('ad1_image',$uuid);
+            $restaurant->ad1_image = $request->ad1_image;
         }
         $restaurant->update();
 
         // ads end
 
-        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated1.'));
+        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
     }
 
     /**
