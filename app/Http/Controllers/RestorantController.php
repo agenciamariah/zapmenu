@@ -67,7 +67,7 @@ class RestorantController extends Controller
 
 
 
-    public function updateADS(Request $request, Restorant $restaurant)
+    public function newADS(Request $request, Restorant $restaurant)
     {
             $restaurant->ad1_link = $request->ad1_link;
 
