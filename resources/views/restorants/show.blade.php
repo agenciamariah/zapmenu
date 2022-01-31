@@ -234,9 +234,7 @@
         var LOCALE="<?php echo  App::getLocale() ?>";
         var IS_POS=false;
     </script>
-    <script src="{{ asset('custom') }}/js/order.js"></script>
-    @include('restorants.phporderinterface')
-@endsection
+
 
     <script type="text/javascript">
 
@@ -297,3 +295,8 @@
 
     </script>
 
+
+    
+    <script src="{{ asset('custom') }}/js/order.js"></script>
+    @include('restorants.phporderinterface')
+@endsection
