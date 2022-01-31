@@ -122,7 +122,7 @@
                                         @include('partials.toggle',['id'=>'itemAvailable','name'=>'Item visível','checked'=>($item->available == 1)])
 
                                         <div class="form-group">
-                                        @include('partials.toggle',['id'=>'itemOrcamento','name'=>'item_orcamento','checked'=>($item->item_orcamento == 2)])
+                                        @include('partials.toggle',['id'=>'item_orcamento','name'=>'item_orcamento','checked'=>($item->item_orcamento == 2)])
                                         </div>
                                         
                                         
