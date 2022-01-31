@@ -315,7 +315,6 @@
 
 
     $('.new-price').each(function(){
-        $(this).attr('style', 'display: none');
         var textDot = $(this).html();
         console.log(textDot);
         textDot = textDot.replace(".", ",");
