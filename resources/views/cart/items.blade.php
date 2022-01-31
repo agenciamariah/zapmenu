@@ -15,10 +15,12 @@
                     </div>
                     <h6 class="product-item_title">@{{ item.name }}</h6>
                     <p class="product-item_quantity">@{{ item.quantity }} x 
-                        @if(null !== item.attributes.item_orcamento)
+                        @if( !empty(item.attributes.item_orcamento))
+                        @if(2 == item.attributes.item_orcamento)
                         Orçamento
                         @else 
                         @{{ item.attributes.friendly_price }}
+                        @endif
                         @endif
                         </p>
                     <div class="row">
