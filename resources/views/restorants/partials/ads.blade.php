@@ -17,6 +17,9 @@
         <div class="row">
         <div class="col-md-12">
         <input type="hidden" id="rid" value="{{ $restorant->id }}"/>
+        @php
+        var_dump($restorant);
+        @endphp
         AD: {{ $restorant->ad1_link }}
         @include('partials.fields',['fields'=>[
             ['ftype'=>'input','name'=>"ad1_link",'id'=>"ad1_link",'placeholder'=>"Footer AD #1 - Link",'required'=>true,'value'=>$restorant->ad1_link],
