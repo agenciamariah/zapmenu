@@ -10,6 +10,9 @@
       .info-block .item-type-2 {
         display: none;
       }
+      #totalPrices .card-body {
+        display: none;
+      }
       </style>
         <!-- List of items -->
         <div  id="cartList" class="border-top">
@@ -59,6 +62,7 @@ $(".items").each(function(){
         $(".input_item_orcamento").val(hasItemOrcamento);
         $(".input_item_orcamento").attr('value', hasItemOrcamento);
         $("#totalPrices .card-body").html("<strong>Você possui um item de orçamento, envie seu pedido e lhe diremos o valor total dos itens.</strong>")
+        $("#totalPrices .card-body").attr("style", "display: block;")
         var itemText1 = $(this).find(".item-type-1");
         itemText1.attr("style", "display: none;")
         var itemText2 = $(this).find(".item-type-2");
@@ -75,6 +79,10 @@ $(".items").each(function(){
         itemText1.attr("style", "display: block;")
     }
 });
+
+if(hasItemOrcamento == false) {
+    $("#totalPrices .card-body").attr("style", "display: block;")
+}
 
 }, 1000);
 </script>
