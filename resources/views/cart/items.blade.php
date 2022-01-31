@@ -18,7 +18,7 @@
         <div  id="cartList" class="border-top">
             <br />
             <div  v-for="item in items" class="items col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
-                <div:class="{ danger: item.atributes.item_orcamento }" class="info-block block-info block-item-type-{{ item.attributes.item_orcamento }} clearfix" v-cloak>
+                <div:class="@{{ danger: item.atributes.item_orcamento }}" class="info-block block-info block-item-type-{{ item.attributes.item_orcamento }} clearfix" v-cloak>
                     <div class="square-box pull-left">
                     <figure>
                         <img :src="item.attributes.image" :data-src="item.attributes.image"  class="productImage" width="100" height="105" alt="">
