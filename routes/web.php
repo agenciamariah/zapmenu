@@ -237,7 +237,7 @@ Route::group(['middleware' => ['auth']], function () {
    //  Route::post('/subscribe/update', 'PlansController@adminupdate')->name('update.plan');
 
 
-    Route::post('/plans/{plan}/createapi', 'PlansController@show')->name('plans.show');
+    // Route::post('/plans/{plan}/createapi', 'PlansController@show')->name('plans.show');
     Route::get('/plan/createapi', 'PlansController@createapi')->name('plans.createapi');
     Route::post('/plan/createapi', 'PlansController@createapi')->name('plans.createapi');
 
