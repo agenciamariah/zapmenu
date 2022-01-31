@@ -13,7 +13,7 @@
     <div class="pl-lg-4">
     <form id="restorant-apps-form" method="post" autocomplete="off" enctype="multipart/form-data" action="{{ route('admin.restaurant.updateADS',$restorant) }}">
             @csrf
-        @method('put')
+        @method('post')
         <div class="row">
         <div class="col-md-12">
         <input type="hidden" id="rid" value="{{ $restorant->id }}"/>

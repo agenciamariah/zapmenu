@@ -53,6 +53,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('restaurants', 'RestorantController');
         Route::put('restaurants_app_update/{restaurant}', 'RestorantController@updateApps')->name('restaurant.updateApps');
         Route::put('restaurants_ads_update/{restaurant}', 'RestorantController@updateADS')->name('restaurant.updateADS');
+        Route::post('restaurants_ads_update/{restaurant}', 'RestorantController@updateADS')->name('restaurant.updateADS');
 
         Route::get('restaurants_add_new_shift/{restaurant}', 'RestorantController@addnewshift')->name('restaurant.addshift');
 
