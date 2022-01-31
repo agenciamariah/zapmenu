@@ -58,6 +58,7 @@ $(".items").each(function(){
         hasItemOrcamento = true;
         $(".input_item_orcamento").val(hasItemOrcamento);
         $(".input_item_orcamento").attr('value', hasItemOrcamento);
+        $("#totalPrices .card-body").html("<strong>Você possui um item de orçamento, envie seu pedido e lhe diremos o valor total dos itens.</strong>")
         var itemText1 = $(this).find(".item-type-1");
         itemText1.attr("style", "display: none;")
         var itemText2 = $(this).find(".item-type-2");
