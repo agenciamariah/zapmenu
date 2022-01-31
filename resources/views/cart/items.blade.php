@@ -14,7 +14,7 @@
                     </figure>
                     </div>
                     <h6 class="product-item_title">@{{ item.name }}</h6>
-                    <p class="product-item_quantity">@{{ item.quantity }} x 
+                    <p class="product-item_quantity">@{{ item.quantity }} @{{ item.item_orcamento }} x 
                          @if(item.item_orcamento == 2) 
                          Orçamento
                          @else
