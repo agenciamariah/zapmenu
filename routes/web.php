@@ -234,7 +234,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/plan', 'PlansController@current')->name('plans.current');
     // Route::post('/subscribe/plan', 'PlansController@subscribe')->name('plans.subscribe');
     Route::get('/subscribe/plan3d/{plan}/{user}', 'PlansController@subscribe3dStripe')->name('plans.subscribe_3d_stripe');
-    Route::post('/subscribe/update', 'PlansController@adminupdate')->name('update.plan');
+   //  Route::post('/subscribe/update', 'PlansController@adminupdate')->name('update.plan');
 
 
     Route::post('/plans/{plan}/createapi', 'PlansController@show')->name('plans.show');
