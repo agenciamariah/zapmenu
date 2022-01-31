@@ -217,7 +217,7 @@ class RestorantController extends Controller
      */
     public function edit(Restorant $restaurant)
     {
-
+        die;
         $ad1_links = $restaurant->ad1_link;
         //dd($restaurant->getBusinessHours()->isOpen());
 
