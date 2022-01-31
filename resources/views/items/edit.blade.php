@@ -127,11 +127,7 @@
 
                                         <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
                                         <label class="custom-toggle" style="float: right">
-                                            @if ($item->item_somavel==2)
                                             <input type="checkbox" name="item_orcamento" value="2" id="itemOrcamento">
-                                            @else
-                                            <input type="checkbox" name="item_orcamento" value="2" checked id="itemOrcamento">
-                                            @endif
                                             <span class="custom-toggle-slider rounded-circle"></span>
                                         </label>
                                         </div>
@@ -291,6 +287,11 @@
                 }
             );
         }
+
     </script>
 @endsection
-
+    <script type="text/javascript">
+        @if ($item->item_orcamento==2)
+        $("#itemOrcamento").click();
+        @endif
+    </script>
