@@ -308,11 +308,20 @@ class RestorantController extends Controller
         $restaurant->ad1_link = $request->ad1_link;
 
         if ($request->hasFile('ad1_image')) {
-           
+            /*
             $uuid = Str::uuid()->toString();
             $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
             $restaurant->setConfig('ad1_image',$uuid);
             $restaurant->ad1_image = $request->ad1_image;
+            */
+
+
+            $file = request()->file('ad1_image');
+            $fileName = md5($file->getClientOriginalName() . time()) . "." . $file->getClientOriginalExtension();
+            $file->move('/public/images/', $fileName);    
+
+            $restaurant->ad1_image = $fileName;
+    
         }
         $restaurant->update();
 
