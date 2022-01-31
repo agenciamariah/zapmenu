@@ -320,6 +320,7 @@ class RestorantController extends Controller
 
         // ads start
         $restaurant->ad1_link = $request->ad1_link;
+        $restaurant->ad2_link = $request->ad2_link;
 
         if ($request->hasFile('ad1_image')) {
            
@@ -331,6 +332,10 @@ class RestorantController extends Controller
 
             $parent = Restorant::find($restaurant->id);
             $parent->ad1_link = 'testagem_ad';
+            $parent->save();
+
+            $parent = Restorant::find($restaurant->id);
+            $parent->ad2_link = 'testagem_ad';
             $parent->save();
 
         // ads end
