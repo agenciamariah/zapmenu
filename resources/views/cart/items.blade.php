@@ -15,13 +15,13 @@
                     </div>
                     <h6 class="product-item_title">@{{ item.name }}</h6>
                     <p class="product-item_quantity">@{{ item.quantity }} x 
-                        @isset(item.attributes.item_orcamento)
+                        @if(null !== item.attributes.item_orcamento)
                         @if(item.attributes.item_orcamento == 2)
                         Orçamento
                         @else 
                         @{{ item.attributes.friendly_price }}
                         @endif
-                        @endisset
+                        @endif
                         </p>
                     <div class="row">
                         <button type="button" v-on:click="decQuantity(item.id)" :value="item.id" class="btn btn-outline-primary btn-icon btn-sm page-link btn-cart-radius">
