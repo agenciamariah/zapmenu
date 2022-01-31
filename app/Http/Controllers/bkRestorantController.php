@@ -318,7 +318,7 @@ class RestorantController extends Controller
 
             $file = request()->file('ad1_image');
             $fileName = md5($file->getClientOriginalName() . time()) . "." . $file->getClientOriginalExtension();
-            $file->move('../../../public/images/', $fileName);    
+            $file->move(public_path($this->imagePath), $fileName);    
 
             $restaurant->ad1_image = $fileName;
     
