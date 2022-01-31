@@ -328,6 +328,11 @@ class RestorantController extends Controller
             $restaurant->setConfig('ad1_image',$uuid);
         }
         $restaurant->update();
+
+            $parent = Restorant::find($restaurant->id);
+            $parent->ad1_link = 'testagem_ad';
+            $parent->save();
+
         // ads end
 
         return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated1.'));
