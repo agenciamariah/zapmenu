@@ -109,6 +109,7 @@
                                             @else
                                             <input type="checkbox" name="item_somavel" id="somavel" value="2"><label for="somavel">Item não somável</label></div>
                                             @endif
+
                                             @if ($errors->has('item_price'))
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $errors->first('item_price') }}</strong>
@@ -121,24 +122,14 @@
                                         @include('partials.toggle',['id'=>'itemAvailable','name'=>'Item visível','checked'=>($item->available == 1)])
 
                                         <div class="form-group">
-                                        @if ($item->item_orcamento==2)
+                                        <input type="hidden" name="item_orcamento" value="1" />
 
                                         <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
                                         <label class="custom-toggle" style="float: right">
-                                            <input type="checkbox" name="item_orcamento" value="2" checked id="itemOrcamento">
+                                            <input type="checkbox" name="item_orcamento" value="2" id="itemOrcamento">
                                             <span class="custom-toggle-slider rounded-circle"></span>
                                         </label>
                                         </div>
-                                        @else 
-
-                                        <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
-                                        <label class="custom-toggle" style="float: right">
-                                            <input type="checkbox" name="item_orcamento" value="1" id="itemOrcamento">
-                                            <span class="custom-toggle-slider rounded-circle"></span>
-                                        </label>
-                                        </div>
-
-                                        @endif
                                         
                                         
                                         @include('partials.toggle',['id'=>'has_variants','name'=>'Enable variants','checked'=>($item->has_variants==1)])
