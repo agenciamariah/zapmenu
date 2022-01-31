@@ -12,6 +12,15 @@
         <form id="restorant-apps-form" method="post" autocomplete="off" enctype="multipart/form-data" action="{{ route('admin.restaurant.updateApps',$restorant) }}">
             @csrf
             @method('put')
+
+        @php
+        var_dump($restorant);
+        @endphp
+        AD: {{ $restorant->ad1_link }}
+        @include('partials.fields',['fields'=>[
+            ['ftype'=>'input','name'=>"ad1_link",'id'=>"ad1_link",'placeholder'=>"Footer AD #1 - Link",'required'=>true,'value'=>$restorant->ad1_link],
+        ]])
+        
             @include('partials.fields',['fields'=>$appFields])
             <div class="text-center">
                 <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
