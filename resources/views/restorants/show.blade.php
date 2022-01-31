@@ -15,6 +15,20 @@
     .item-current-box #res_title {
         font-size: 18px;
     }
+    .footer_restaurante .logo { 
+        padding-left: 5%;
+        width: 30%;
+        float: left;
+        margin-bottom: 30px;
+    }
+    .footer_restaurante .logo-text {
+        width: 70%;
+        float: left;
+    } 
+    .footer_restaurante .logo-text p {
+        margin-bottom: 0px;
+        font-family: "Open Sans",sans-serif;
+    }
 </style>
 @endsection
 
@@ -152,7 +166,7 @@
                         <img src="https://app.zapentrega.com/uploads/settings/81dd259b-fd31-4ba2-af91-64ab5e6b42e0_logo.jpg" />
                     </div>
                     <div class="logo-text">
-                        <p>{{$restorant->name}} |  @if(!empty($restorant->phone))  <i class="ni ni-mobile-button"></i> <a href="tel:{{$restorant->phone}}">{{ $restorant->phone }} </a> @endif</p>
+                        <p><b>{{$restorant->name}}</b> | @if(!empty($restorant->phone)) <a href="tel:{{$restorant->phone}}">{{ $restorant->phone }} </a> @endif</p>
                         <p>@if(!empty($restorant->address))<i class="ni ni-pin-3"></i></i> <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ urlencode($restorant->address) }}">{{ $restorant->address }}</a>  | @endif</p>
                     </div>
                 </div>
