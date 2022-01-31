@@ -206,6 +206,8 @@ class ItemsController extends Controller
 
         $item->available = $request->exists('itemAvailable');
         $item->has_variants = $request->exists('has_variants');
+        $item->item_orcamento = $request->exists('item_orcamento');
+        $item->item_somavel = $request->exists('item_somavel');
 
         if ($request->hasFile('item_image')) {
             if ($request->hasFile('item_image')) {
