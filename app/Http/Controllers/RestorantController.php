@@ -311,7 +311,7 @@ class RestorantController extends Controller
         }
         // ads end
 
-        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
+        return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus($request->ad1_link);
     }
 
     public function updateADS(Request $request, Restorant $restaurant)
