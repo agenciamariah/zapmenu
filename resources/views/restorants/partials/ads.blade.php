@@ -3,7 +3,7 @@
 
         <div class="row align-items-center">
             <div class="col-8">
-                <h3 class="mb-0">Apps</h3>
+                <h3 class="mb-0">ADS</h3>
             </div>
 
         </div>
