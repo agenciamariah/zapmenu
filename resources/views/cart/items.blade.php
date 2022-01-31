@@ -57,6 +57,7 @@ $(".items").each(function(){
     if(erasePrice == "2"){
         hasItemOrcamento = true;
         $(".input_item_orcamento").val(hasItemOrcamento);
+        $(".input_item_orcamento").attr('value', hasItemOrcamento);
         var itemText1 = $(this).find(".item-type-1");
         itemText1.attr("style", "display: none;")
         var itemText2 = $(this).find(".item-type-2");
