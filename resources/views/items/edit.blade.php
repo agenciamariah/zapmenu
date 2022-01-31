@@ -104,7 +104,6 @@
                                             <input style="width: 65%; float: left; margin-right: 5%;" type="number" step="any" name="item_price" id="item_price" class="form-control form-control-alternative{{ $errors->has('item_price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('item_price', $item->price) }}" autofocus>
                                             <div style=" width: 30%; margin-top: 12px; float: left; ">
 
-                                            {{ $item->item_somavel }}
                                             @if ($item->item_somavel==2)
                                             <input type="checkbox" name="item_somavel" id="somavel" value="1"><label for="somavel">Item somável</label></div>
                                             @else
@@ -123,19 +122,7 @@
                                         @include('partials.toggle',['id'=>'itemAvailable','name'=>'Item visível','checked'=>($item->available == 1)])
 
                                         <div class="form-group">
-                                        <input type="hidden" name="item_orcamento" value="1" />
                                         @include('partials.toggle',['id'=>'itemOrcamento','name'=>'item_orcamento','checked'=>($item->item_orcamento == 2)])
-
-
-                                        <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
-                                        <label class="custom-toggle" style="float: right">
-                                            @if ($item->item_somavel==2)
-                                            <input type="checkbox" name="item_orcamento" value="2" id="itemOrcamento">
-                                            @else
-                                            <input type="checkbox" name="item_orcamento" value="2" checked id="itemOrcamento">
-                                            @endif
-                                            <span class="custom-toggle-slider rounded-circle"></span>
-                                        </label>
                                         </div>
                                         
                                         
