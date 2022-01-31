@@ -46,3 +46,21 @@
     </div>
 </div>
 <br />
+
+<script type="text/javascript">
+$(".items").each(function(){
+    var erasePrice = $(this).find("#erase-all");
+    console.log(erasePrice);
+    erasePrice = erasePrice.html();
+    if(erasePrice == "2"){
+        var itemText = $(this).find(".product-item_quantity");
+        itemText.html("Orçamento");
+
+        var itemBtn1 = $(this).find(".row > button:first-child");
+        itemBtn1.remove();
+        var itemBtn2 = $(this).find(".row > button:first-child");
+        itemBtn2.remove();
+
+    }
+});
+</script>
