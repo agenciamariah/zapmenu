@@ -116,6 +116,7 @@
                                                 </span>
                                             @endif
                                         </div>
+                                        {{ $item->item_orcamento }}
                                         @include('partials.input',['id'=>'vat','name'=>__('VAT percentage( calculated into item price )'),'placeholder'=>__('Item VAT percentage'),'value'=>$item->vat,'required'=>false,'type'=>'number'])
                                         <?php $image=['name'=>'item_image','label'=>__('Item Image'),'value'=> $item->logom,'style'=>'width: 290px; height:200']; ?>
                                         @include('partials.images',$image)
