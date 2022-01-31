@@ -328,6 +328,7 @@
         if(itemAtualOrcamento == true) {
             $(this).html('Orçamento');
             $(this).attr('style', 'display: block');
+            itemAtualOrcamento = false;
         }
 
      });
