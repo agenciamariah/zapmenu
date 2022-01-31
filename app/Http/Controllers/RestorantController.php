@@ -326,6 +326,7 @@ class RestorantController extends Controller
             $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
             $restaurant->setConfig('ad1_image',$uuid);
         }
+        $restaurant->update();    
         // ads end
 
         return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated1.'));
@@ -341,6 +342,22 @@ class RestorantController extends Controller
     
     public function update(Request $request, Restorant $restaurant)
     {
+        if($request->ad1_link != "") {
+
+            // ads start
+            $restaurant->ad1_link = $request->ad1_link;
+
+            if ($request->hasFile('ad1_image')) {
+               
+                $uuid = Str::uuid()->toString();
+                $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
+                $restaurant->setConfig('ad1_image',$uuid);
+
+            }
+            $restaurant->update();
+            // ads end
+        }
+        else {
         $restaurant->name = strip_tags($request->name);
         $restaurant->address = strip_tags($request->address);
         $restaurant->phone = strip_tags($request->phone);
@@ -445,6 +462,7 @@ class RestorantController extends Controller
         //Update custom fields
         if($request->has('custom')){
             $restaurant->setMultipleConfig($request->custom);
+        }
         }
 
         if (auth()->user()->hasRole('admin')) {
