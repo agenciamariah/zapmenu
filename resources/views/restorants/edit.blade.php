@@ -25,6 +25,9 @@
                     </li>
                 @endif
                 <li class="nav-item">
+                    <a class="nav-link mb-sm-3 mb-md-0" id="tabs-menagment-main" data-toggle="tab" href="#ads" role="tab" aria-controls="tabs-menagment" aria-selected="true"><i class="ni ni-time-alarm mr-2"></i>{{ __('Ads')}}</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link mb-sm-3 mb-md-0" id="tabs-menagment-main" data-toggle="tab" href="#hours" role="tab" aria-controls="tabs-menagment" aria-selected="true"><i class="ni ni-time-alarm mr-2"></i>{{ __('Working Hours')}}</a>
                 </li>
                 
@@ -96,6 +99,14 @@
                 @if(count($appFields)>0)
                     <div class="tab-pane fade show" id="apps" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
                         @include('restorants.partials.apps') 
+                    </div>
+                @endif
+
+
+                <!-- Tab Apps -->
+                @if(count($appFields)>0)
+                    <div class="tab-pane fade show" id="ads" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+                        @include('restorants.partials.ads') 
                     </div>
                 @endif
 
