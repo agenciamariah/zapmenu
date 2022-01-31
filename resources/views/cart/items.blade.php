@@ -46,8 +46,6 @@
 console.log("item type code init: orcamento");
 setTimeout(function(){
 
-$(window).load(function(){
-
 $(".items").each(function(){
     var erasePrice = $(this).find("#erase-all");
     console.log(erasePrice);
@@ -64,8 +62,6 @@ $(".items").each(function(){
         itemBtn2.remove();
 
     }
-});
-
 });
 
 }, 1000);
