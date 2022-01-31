@@ -44,7 +44,7 @@
 @section('js')
 <script type="text/javascript">
 console.log("item type code init: orcamento");
-$("document").ready(function(){
+$(window).load(function(){
 
 $(".items").each(function(){
     var erasePrice = $(this).find("#erase-all");
