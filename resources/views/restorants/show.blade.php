@@ -213,28 +213,6 @@
         </div>
     @endsection
 
-    @section('js')
-        <footer class="footer footer_restaurante">
-            <div class="container">
-              <div class="row align-items-center justify-content-md-between">
-                <div class="col-md-12">
-                    <div class="logo">
-                        <img src="https://app.zapentrega.com/uploads/settings/81dd259b-fd31-4ba2-af91-64ab5e6b42e0_logo.jpg" />
-                    </div>
-                    <div class="logo-text">
-                        <p>{{$restorant->name}} |  @if(!empty($restorant->phone))  <i class="ni ni-mobile-button"></i> <a href="tel:{{$restorant->phone}}">{{ $restorant->phone }} </a> @endif</p>
-                        <p>@if(!empty($restorant->address))<i class="ni ni-pin-3"></i></i> <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ urlencode($restorant->address) }}">{{ $restorant->address }}</a>  | @endif</p>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="banner-footer">
-                    <img src="https://previews.123rf.com/images/ylivdesign/ylivdesign1710/ylivdesign171002102/87385698-postal-office-banner-horizontal-concept-flat-illustration-of-postal-office-banner-horizontal-vector-.jpg" />
-                    </div>
-                </div>
-              </div>
-            </div>
-          </footer>
-    @endsection
 
     @section('addiitional_button_1_mobile')
         <div class="dropdown mobile_menu">
@@ -261,6 +239,28 @@
 @endif
 
 @section('js')
+
+        <footer class="footer footer_restaurante">
+            <div class="container">
+              <div class="row align-items-center justify-content-md-between">
+                <div class="col-md-12">
+                    <div class="logo">
+                        <img src="https://app.zapentrega.com/uploads/settings/81dd259b-fd31-4ba2-af91-64ab5e6b42e0_logo.jpg" />
+                    </div>
+                    <div class="logo-text">
+                        <p>{{$restorant->name}} |  @if(!empty($restorant->phone))  <i class="ni ni-mobile-button"></i> <a href="tel:{{$restorant->phone}}">{{ $restorant->phone }} </a> @endif</p>
+                        <p>@if(!empty($restorant->address))<i class="ni ni-pin-3"></i></i> <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ urlencode($restorant->address) }}">{{ $restorant->address }}</a>  | @endif</p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="banner-footer">
+                    <img src="https://previews.123rf.com/images/ylivdesign/ylivdesign1710/ylivdesign171002102/87385698-postal-office-banner-horizontal-concept-flat-illustration-of-postal-office-banner-horizontal-vector-.jpg" />
+                    </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+
     <script>
         var CASHIER_CURRENCY = "<?php echo  config('settings.cashier_currency') ?>";
         var LOCALE="<?php echo  App::getLocale() ?>";
