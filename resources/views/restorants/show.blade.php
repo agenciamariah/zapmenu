@@ -141,6 +141,9 @@
                 </div>
             @endforeach
 
+           <!-- ads footer start -->
+           </div>
+           </section>
            <footer class="footer footer_restaurante">
             <div class="container">
               <div class="row align-items-center justify-content-md-between">
@@ -161,6 +164,7 @@
               </div>
             </div>
            </footer>
+           <!-- ads footer end -->
 
             @else
                 <div class="row">
