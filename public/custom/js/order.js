@@ -267,9 +267,9 @@ function setCurrentItem(id){
     var item=items[id];
     currentItem=item;
     previouslySelected=[];
-    $('#modalTitle').text(item.name);
+    $('#modalTitle').text(item.item_orcamento);
     $('#modalName').text(item.name);
-    if(item.item_orcamento == 2){
+    if(item.item_orcamento == "2"){
         $('#modalPrice').html("Orçamento");
     } else {
         $('#modalPrice').html(item.price);
