@@ -25,7 +25,7 @@
                     </figure>
                     </div>
                     <h6 class="product-item_title">@{{ item.name }}</h6>
-                    <p class="product-item_quantity item-type-1">@{{ item.quantity }} x @{{ item.attributes.friendly_price }}</p>
+                    <p class="product-item_quantity item-type-1">@{{ item.quantity }} x @{{ item.attributes.friendly_price }} @{{ item.attributes.item_orcamento }}</p>
                     <p class="product-item_quantity item-type-2">@{{ item.quantity }} x Orçamento</p>
                     <div class="row">
                         <button type="button" v-on:click="decQuantity(item.id)" :value="item.id" class="btn btn-outline-primary btn-icon btn-sm page-link btn-cart-radius">
