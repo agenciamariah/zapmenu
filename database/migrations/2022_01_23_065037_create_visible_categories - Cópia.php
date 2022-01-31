@@ -14,7 +14,7 @@ class CreateVisibleCategoriesCópia extends Migration
     public function up()
     {
         Schema::table('categories', function($table) {
-            $table->integer('visible');
+            // $table->integer('visible');
         });
     }
 
@@ -27,7 +27,7 @@ class CreateVisibleCategoriesCópia extends Migration
     {
 
         Schema::table('categories', function($table) {
-            $table->dropColumn('visible');
+            // $table->dropColumn('visible');
         });
 
     }
