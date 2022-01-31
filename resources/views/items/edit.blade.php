@@ -102,7 +102,13 @@
                                         <div class="form-group{{ $errors->has('item_price') ? ' has-danger' : '' }}">
                                             <label style="float: left; width: 100%;" class="form-control-label" for="item_price">{{ __('Item Price') }}</label>
                                             <input style="width: 65%; float: left; margin-right: 5%;" type="number" step="any" name="item_price" id="item_price" class="form-control form-control-alternative{{ $errors->has('item_price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('item_price', $item->price) }}" autofocus>
-                                            <div style=" width: 30%; margin-top: 12px; float: left; "><input type="checkbox" name="item_somavel" id="somavel" value="2"><label for="somavel">Item não somável</label></div>
+                                            <div style=" width: 30%; margin-top: 12px; float: left; ">
+
+                                            @if ($item->item_somavel==2)
+                                            <input type="checkbox" name="item_somavel" id="somavel" value="1"><label for="somavel">Item somável</label></div>
+                                            @else
+                                            <input type="checkbox" name="item_somavel" id="somavel" value="2"><label for="somavel">Item não somável</label></div>
+                                            @endif
                                             @if ($errors->has('item_price'))
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $errors->first('item_price') }}</strong>
@@ -115,7 +121,7 @@
                                         @include('partials.toggle',['id'=>'itemAvailable','name'=>'Item visível','checked'=>($item->available == 1)])
 
                                         <div class="form-group">
-                                        @if ($item->item_orcamento==1)
+                                        @if ($item->item_orcamento==2)
 
                                         <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
                                         <label class="custom-toggle" style="float: right">
@@ -127,7 +133,7 @@
 
                                         <label class="form-control-label" for="itemOrcamento">Item de Orçamento</label>
                                         <label class="custom-toggle" style="float: right">
-                                            <input type="checkbox" name="item_orcamento" value="2" id="itemOrcamento">
+                                            <input type="checkbox" name="item_orcamento" value="1" id="itemOrcamento">
                                             <span class="custom-toggle-slider rounded-circle"></span>
                                         </label>
                                         </div>
