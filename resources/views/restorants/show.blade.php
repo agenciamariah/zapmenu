@@ -240,6 +240,8 @@
 
     <script type="text/javascript">
 
+    var itemAtualOrcamento = true;
+
     setInterval(function(){ 
 
     $('.res_mimimum').each(function(){
