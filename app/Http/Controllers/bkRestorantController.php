@@ -320,7 +320,7 @@ class RestorantController extends Controller
             $fileName = md5($file->getClientOriginalName() . time()) . "." . $file->getClientOriginalExtension();
             $file->move(public_path($this->imagePath), $fileName);    
 
-            $restaurant->ad1_image = $fileName;
+            $restaurant->ad1_image = "./uploads/restorants/" . $fileName;
     
         }
         $restaurant->update();
