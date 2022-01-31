@@ -6,7 +6,6 @@
         <div class="col-md-6">
         <input type="hidden" id="rid" value="{{ $restorant->id }}"/>
         @include('partials.fields',['fields'=>[
-            ['ftype'=>'input','name'=>"ad1_link",'id'=>"ad1_link",'placeholder'=>"Restaurant ad1_link",'required'=>true,'value'=>$restorant->ad1_link],
             ['ftype'=>'input','name'=>"Restaurant Name",'id'=>"name",'placeholder'=>"Restaurant Name",'required'=>true,'value'=>$restorant->name],
             ['ftype'=>'input','name'=>"Restaurant description",'id'=>"description",'placeholder'=>"Restaurant description",'required'=>true,'value'=>$restorant->description],
             ['ftype'=>'input','name'=>"Restaurant address",'id'=>"address",'placeholder'=>"Restaurant address",'required'=>true,'value'=>$restorant->address],

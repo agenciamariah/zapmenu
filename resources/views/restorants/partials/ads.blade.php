@@ -11,9 +11,9 @@
     <div class="card-body">
 
     <div class="pl-lg-4">
-    <form id="restorant-apps-form" method="post" autocomplete="off" enctype="multipart/form-data" action="https://app.zapentrega.com/updateres/ads/34">
+    <form id="restorant-apps-form" method="post" autocomplete="off" enctype="multipart/form-data" action="{{ route('admin.restaurant.updateADS',$restorant) }}">
             @csrf
-        @method('post')
+        @method('put')
         <div class="row">
         <div class="col-md-12">
         <input type="hidden" id="rid" value="{{ $restorant->id }}"/>
