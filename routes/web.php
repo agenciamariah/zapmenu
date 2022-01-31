@@ -232,7 +232,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('plans', 'PlansController');
     Route::get('/plan', 'PlansController@current')->name('plans.current');
-    Route::post('/subscribe/plan', 'PlansController@subscribe')->name('plans.subscribe');
+    // Route::post('/subscribe/plan', 'PlansController@subscribe')->name('plans.subscribe');
     Route::get('/subscribe/plan3d/{plan}/{user}', 'PlansController@subscribe3dStripe')->name('plans.subscribe_3d_stripe');
     Route::post('/subscribe/update', 'PlansController@adminupdate')->name('update.plan');
 
