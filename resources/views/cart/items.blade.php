@@ -16,11 +16,9 @@
                     <h6 class="product-item_title">@{{ item.name }}</h6>
                     <p class="product-item_quantity">@{{ item.quantity }} x 
                         @if(null !== item.attributes.item_orcamento)
-                        @if(item.attributes.item_orcamento == 2)
                         Orçamento
                         @else 
                         @{{ item.attributes.friendly_price }}
-                        @endif
                         @endif
                         </p>
                     <div class="row">
