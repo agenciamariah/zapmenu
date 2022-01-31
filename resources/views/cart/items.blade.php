@@ -14,15 +14,8 @@
                     </figure>
                     </div>
                     <h6 class="product-item_title">@{{ item.name }}</h6>
-                    <p class="product-item_quantity">@{{ item.quantity }} x 
-                        @if( !empty(item.attributes.item_orcamento))
-                        @if(2 == item.attributes.item_orcamento)
-                        Orçamento
-                        @else 
-                        @{{ item.attributes.friendly_price }}
-                        @endif
-                        @endif
-                        </p>
+                    <p class="product-item_quantity item-type-@{{ item.attributes.item_orcamento }}">@{{ item.quantity }} x @{{ item.attributes.friendly_price }}</p>
+                    <p class="product-item_quantity item-type-@{{ item.attributes.item_orcamento }}">@{{ item.quantity }} x Orçamento</p>
                     <div class="row">
                         <button type="button" v-on:click="decQuantity(item.id)" :value="item.id" class="btn btn-outline-primary btn-icon btn-sm page-link btn-cart-radius">
                             <span class="btn-inner--icon btn-cart-icon"><i class="fa fa-minus"></i></span>
