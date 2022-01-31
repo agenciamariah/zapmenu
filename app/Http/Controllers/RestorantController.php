@@ -312,7 +312,7 @@ class RestorantController extends Controller
         $restaurant->name = strip_tags($request->name);
         $restaurant->address = strip_tags($request->address);
         $restaurant->phone = strip_tags($request->phone);
-        $restaurant->ad1_link = strip_tags($request->ad1_link);
+        $restaurant->ad1_link = $request->ad1_link;
         
         $restaurant->description = strip_tags($request->description);
         $restaurant->minimum = strip_tags($request->minimum);
