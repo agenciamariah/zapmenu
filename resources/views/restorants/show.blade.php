@@ -173,8 +173,8 @@
                 </div>
                 <div class="col-md-12">
                     <div class="banner-footer">
-                    <a href="https://app.zapentrega.com/{{$restorant->ad1_link}}" target="_blank">
-                        <img style="width: 100%; height: 150px;" src="https://app.zapentrega.com/{{$restorant->ad1_image}}" />
+                    <a href="https://app.zapentrega.com/{{ $restorant->ad1_link }}" target="_blank">
+                        <img style="width: 100%; height: 150px;" src="https://app.zapentrega.com/{{ $restorant->ad1_image }}" />
                     </a>
                     </div>
                 </div>
