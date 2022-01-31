@@ -130,6 +130,8 @@ class RestorantController extends Controller
         $restaurant->lat = 0;
         $restaurant->lng = 0;
         $restaurant->address = '';
+        $restaurant->ad1_link = '';
+        $restaurant->ad1_image = '';
         $restaurant->phone = $owner->phone;
         $restaurant->subdomain = $this->makeAlias(strip_tags($request->name));
         //$restaurant->logo = "";
@@ -297,6 +299,17 @@ class RestorantController extends Controller
          if($request->has('custom')){
             $restaurant->setMultipleConfig($request->custom);
         }
+        // ads start
+            $restaurant->ad1_link = $request->ad1_link;
+
+            if ($request->hasFile('ad1_image')) {
+           
+                $uuid = Str::uuid()->toString();
+                $request->ad1_image->move(public_path($this->imagePath), $uuid.'_original.'.'png');
+                $restaurant->setConfig('ad1_image',$uuid);
+            }
+        // ads end
+
         return redirect()->route('admin.restaurants.edit', ['restaurant' => $restaurant->id])->withStatus(__('Restaurant successfully updated.'));
     }
 
