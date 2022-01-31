@@ -23,7 +23,7 @@
         <div class="row">
             <?php
                 $images=[
-                    ['name'=>'ad1_image','label'=>__('Footer AD #1 - Imagem'),'value'=>$restorant->logowide,'style'=>'width: 200px; height: 62px;','help'=>"PNG 1200x150"]
+                    ['name'=>'ad1_image','label'=>__('Footer AD #1 - Imagem'),'value'=>$restorant->ad1_image,'style'=>'width: 200px; height: 62px;','help'=>"PNG 1200x150"]
                 ]
             ?>
             @foreach ($images as $image)
