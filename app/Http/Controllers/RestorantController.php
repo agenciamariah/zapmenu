@@ -217,7 +217,8 @@ class RestorantController extends Controller
      */
     public function edit(Restorant $restaurant)
     {
-       
+
+        $ad1_links = $restaurant->ad1_link;
         //dd($restaurant->getBusinessHours()->isOpen());
 
         //Days of the week
@@ -238,7 +239,9 @@ class RestorantController extends Controller
         }
 
         
-
+        $restaurant->ad2_link = "testeAdEdit1";
+        $restaurant->update();
+        $restaurant->save();
         
 
         //Languages
@@ -305,6 +308,7 @@ class RestorantController extends Controller
                 'available_languages'=> $available_languages,
                 'default_language'=>$default_language,
                 'currency'=>$currency,
+                'ad1_links'=>$ad1_links,
                 'appFields'=>$appFields
                 ]);
         }
