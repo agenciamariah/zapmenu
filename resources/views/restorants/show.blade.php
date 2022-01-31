@@ -272,6 +272,10 @@
           $(this).html(textDot);
         }
 
+        if(itemAtualOrcamento == true) {
+            $(this).html('Orçamento');
+        }
+
      });
 
 
@@ -296,7 +300,7 @@
     </script>
 
 
-    
+
     <script src="{{ asset('custom') }}/js/order.js"></script>
     @include('restorants.phporderinterface')
 @endsection
